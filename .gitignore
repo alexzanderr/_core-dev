@@ -1,0 +1,10 @@
+.pytest_cache
+__pycache__
+credentials.py
+db.sqlite3
+.venv
+*.sublime-*
+nginx.conf
+nginx/static
+migrations
+.mypy_cache
