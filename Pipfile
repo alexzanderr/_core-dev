@@ -1,0 +1,39 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+rich = "*"
+pylint = "*"
+bs4 = "*"
+datedelta = "*"
+gtts = "*"
+keyboard = "*"
+pyperclip = "*"
+pytz = "*"
+pyttsx3 = "*"
+pydub = "*"
+speechrecognition = "*"
+scipy = "*"
+pyowm = "*"
+imageio = "*"
+opencv-python = "*"
+pyautogui = "*"
+moviepy = "*"
+selenium = "*"
+pyppeteer = "*"
+playwright = "*"
+pdfplumber = "*"
+pypdf2 = "*"
+tqdm = "*"
+ciphey = "*"
+pytesseract = "*"
+pyzbar = "*"
+
+[dev-packages]
+pytest = "*"
+
+[requires]
+python_version = "3.10"
