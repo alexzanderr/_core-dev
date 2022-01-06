@@ -9,6 +9,9 @@ len_arguments=${#arguments[@]}
 
 
 function _get_after_install() {
+    # pepe its broken
+    # TODO
+    # switch to python
     for (( i=2; i<${len_arguments}; i++ )); do
         printf "${arguments[$i]} "
     done
@@ -18,7 +21,7 @@ if [[ $one == "i" ]] || [[ $one == "install" ]]; then
     # pipenv install $2
     # for arg in "${arguments[@]}"; do
     echo `_get_after_install`
-    pipenv install `_get_after_install`
+    # pipenv install `_get_after_install`
 
 elif [[ $one == "di" ]] || [[ $one == "dinstall" ]]; then
     # pipenv install --dev $2

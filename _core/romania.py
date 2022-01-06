@@ -276,8 +276,11 @@ def birth_date_from_cnp(code):
     return None
 
 
-def remove_diacritics(string: str):
-    return string. \
+def remove_diacritics(_string: str):
+    if not isinstance(_string, str):
+        raise TypeError(f"@_string: '{_string}' should be type string")
+
+    return _string. \
         replace("ă", "a"). \
         replace("ș", "s"). \
         replace("î", "i"). \
@@ -288,7 +291,12 @@ def remove_diacritics(string: str):
         replace("Î", "I"). \
         replace("ţ", "t"). \
         replace("“", '"'). \
-        replace("”", '"')
+        replace("”", '"'). \
+        replace("Î", 'I'). \
+        replace("Ş", 'S'). \
+        replace("Ş", 'S'). \
+        replace("Ă", 'A'). \
+        replace("Â", 'A')
 
 
 # TESTING

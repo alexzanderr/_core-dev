@@ -13,7 +13,7 @@
 from pyowm import OWM
 
 # core package (pip install python-core)
-from core.system import *
+from _core.system import *
 
 
 class Wheather:

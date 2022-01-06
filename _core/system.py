@@ -14,8 +14,8 @@ import platform
 from pathlib import Path
 
 # core package ( pip installpython-core )
-import core.exceptions
-import core.aesthetics
+import _core.exceptions
+import _core.aesthetics
 
 
 def get_operating_system():

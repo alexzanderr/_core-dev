@@ -10,6 +10,10 @@
 test:
 	# durations is to print all durations for every called func
 	pytest -vv -x -rP --color=yes --durations=0
+	
+tests:
+	# durations is to print all durations for every called func
+	pytest -vv -x -rP --color=yes --durations=0
 
 lint:
 	pylint --load-plugins pylint_django -j 4 `ls -R|grep .py$|xargs`

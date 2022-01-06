@@ -27,58 +27,113 @@
 """
 
 
+# WHY YOU CANT NAME YOUR MODULES AS _MODULE.PY
+"""
+ImportError while importing test module '/home/alexzander/Alexzander__/programming/dev/
+python3/_core/_core/tests/test_datetime.py'.
+Hint: make sure your test modules/packages have valid Python names.
+Traceback:
+../../../../../.local/share/virtualenvs/_core-2r4s7-gL/lib/python3.10/site-packages/_py
+test/python.py:578: in _importtestmodule
+    mod = import_path(self.fspath, mode=importmode)
+../../../../../.local/share/virtualenvs/_core-2r4s7-gL/lib/python3.10/site-packages/_py
+test/pathlib.py:524: in import_path
+    importlib.import_module(module_name)
+/usr/lib/python3.10/importlib/__init__.py:126: in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+<frozen importlib._bootstrap>:1050: in _gcd_import
+    ???
+<frozen importlib._bootstrap>:1027: in _find_and_load
+    ???
+<frozen importlib._bootstrap>:1006: in _find_and_load_unlocked
+    ???
+<frozen importlib._bootstrap>:688: in _load_unlocked
+    ???
+../../../../../.local/share/virtualenvs/_core-2r4s7-gL/lib/python3.10/site-packages/_py
+test/assertion/rewrite.py:170: in exec_module
+    exec(co, module.__dict__)
+_core/tests/test_datetime.py:4: in <module>
+    from _datetime import is_valid_date_format
+E   ImportError: cannot import name 'is_valid_date_format' from '_datetime' (/usr/lib/p
+ython3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so)
+"""
+
 # python
-import time
+from time import time
 import calendar
 from datetime import datetime
 from datedelta import datedelta
 from collections import namedtuple
 
+
 # core package ( pip install python-core )
-from core import numbers__
-from core import aesthetics
+from _core._math import fixed_set_precision_float
+from _core._math import fixed_set_precision_str
+from _core import aesthetics
 
 
-date_format = "%d.%m.%Y"
-time_format = "%H:%M:%S"
+__date_format = "%d.%m.%Y"
+__time_format = "%H:%M:%S"
 
-datetime_format = "{}-{}".format(date_format, time_format)
-timedate_format = "{}-{}".format(time_format, date_format)
+__datetime_format = "{}-{}".format(__date_format, __time_format)
+__timedate_format = "{}-{}".format(__time_format, __date_format)
 
 
-def is_valid_date(date_str: str):
+def is_valid_date_format(
+    date_str: str,
+    _date_format: str = __date_format) -> bool:
+    """
+        >>> is_valid_date_format("12.12.2021")
+        >>> True
+
+        >>> is_valid_date_format("12.14.2021")
+        >>> False
+    """
     try:
-        datetime.strptime(date_str, date_format)
-        return True
+        datetime.strptime(date_str, _date_format)
     except:
         return False
+    return True
 
 
-def is_valid_time(time_str: str):
+def is_valid_time_format(
+    time_str: str,
+    _time_format: str = __time_format) -> bool:
+    """
+        # 3 AM 12 minutes and 23 seconds
+        >>> is_valid_time_format("03:12:23")
+        >>> True
+
+        >>> is_valid_time_format("03:12:123")
+        >>> False
+    """
     try:
-        datetime.strptime(time_str, time_format)
-        return True
+        # strptime takes no keyword arguments
+        datetime.strptime(time_str, _time_format)
     except:
         return False
+    return True
 
 
-def is_valid_datetime(datetime_str: str):
+def is_valid_datetime_format(
+    datetime_str: str,
+    _datetime_format: str = __datetime_format) -> bool:
     try:
-        datetime.strptime(datetime_str, datetime_format)
-        return True
+        datetime.strptime(datetime_str, _datetime_format)
     except:
         return False
+    return True
 
 
-def get_current_date(__format=date_format):
+def get_current_date(__format=__date_format):
     return datetime.now().strftime(__format)
 
 
-def get_current_time(__format=time_format):
+def get_current_time(__format=__time_format):
     return datetime.now().strftime(__format)
 
 
-def get_current_time_obj(__format=time_format):
+def get_current_time_obj(__format=__time_format):
     return datetime.strptime(get_current_time(), __format)
 
 
@@ -89,26 +144,26 @@ def get_current_minute():
     return datetime.now().strftime("%M")
 
 
-def get_current_datetime(__format=datetime_format):
+def get_current_datetime(__format=__datetime_format):
     return datetime.now().strftime(__format)
 
-def get_current_datetime_obj(__format=datetime_format):
+def get_current_datetime_obj(__format=__datetime_format):
     return datetime.strptime(datetime.now().strftime(__format), __format)
 
 
-def get_current_timedate(__format=timedate_format):
+def get_current_timedate(__format=__timedate_format):
     return datetime.now().strftime(__format)
 
 
-def timestamp_to_date(seconds: int, __format=date_format):
+def timestamp_to_date(seconds: int, __format=__date_format):
     return datetime.fromtimestamp(seconds).strftime(__format)
 
 
-def timestamp_to_time(seconds: int, __format=time_format):
+def timestamp_to_time(seconds: int, __format=__time_format):
     return datetime.fromtimestamp(seconds).strftime(__format)
 
 
-def timestamp_to_datetime(seconds: int, __format=datetime_format):
+def timestamp_to_datetime(seconds: int, __format=__datetime_format):
     return datetime.fromtimestamp(seconds).strftime(__format)
 
 
@@ -204,7 +259,7 @@ def get_execution_time(__function, *params):
         print(result)
 
     duration = time() - before
-    duration = numbers__.fixed_set_precision_str(duration, 2)
+    duration = fixed_set_precision_str(duration, 2)
     return duration
 
 
@@ -222,7 +277,7 @@ class TimeObject(object):
 
 
 
-def datetime_object_to_str(datetime_object, __format=datetime_format):
+def datetime_object_to_str(datetime_object, __format=__datetime_format):
     return datetime_object.strftime(__format)
 
 
@@ -268,7 +323,7 @@ def VisualTimer(total_seconds=None, minutes=None, hours=None):
 def days_difference(start_date, stop_date=get_current_date()) -> int:
     if stop_date == get_current_date():
         if type(start_date) == str:
-            _start_date = datetime.strptime(start_date, date_format)
+            _start_date = datetime.strptime(start_date, __date_format)
         else:
             _start_date = start_date
     return (stop_date - _start_date).days
