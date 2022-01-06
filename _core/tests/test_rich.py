@@ -2,7 +2,7 @@
 
 
 
-from _rich import rich_exception_decorator
+from _core._rich import rich_exception_decorator
 
 @rich_exception_decorator
 def function(a=123):

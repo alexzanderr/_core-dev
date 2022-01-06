@@ -31,8 +31,8 @@ elif [[ $one == "s" ]] || [[ $one == "shell" ]]; then
     # will launch a new zsh subshell
     default_shell=$(env | grep ^SHELL= | cut -f2 -d"=")
     echo "'$default_shell'"
-    if [[ $default_shell == "/bin/zsh" ]]; then
-        /bin/zsh -c "pipenv shell"
+    if [[ $default_shell == "/bin/zsh" ]] || [[ $default_shell == "/usr/bin/zsh" ]]; then
+        /usr/bin/zsh -c "pipenv shell"
     fi
 
     # eval "$default_shell -c 'pipenv shell'"

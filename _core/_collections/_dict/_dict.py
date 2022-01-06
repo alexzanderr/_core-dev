@@ -16,7 +16,7 @@
 
 # core/_collections/_dict
 # from exceptions import DictException
-from exceptions import EmptyDictError
+from .exceptions import EmptyDictError
 
 
 class Dict(dict):

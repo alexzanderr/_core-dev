@@ -929,9 +929,9 @@ fancy_title = "▬▬▬▬▬▬▬▬▬ஜ۩۞  {title} ۞۩ஜ▬▬▬▬�
 # ================= SYMBOLS SECTION =====================
 
 
-from _rich import error
-from _rich import success
-from _rich import warning
+from ._rich import error
+from ._rich import success
+from ._rich import warning
 
 
 # TESTING

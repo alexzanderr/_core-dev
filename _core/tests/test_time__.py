@@ -1,6 +1,6 @@
 
 
-from time__ import get_exec_time
+from _core._time import get_exec_time
 
 from time import sleep
 

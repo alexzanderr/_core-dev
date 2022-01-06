@@ -16,7 +16,7 @@ from sys import getsizeof
 # core
 from typing import Any, List, Union
 
-from exceptions import EmptyListError
+from .exceptions import EmptyListError
 
 class List:
     """ This is the implementation of a better python list.

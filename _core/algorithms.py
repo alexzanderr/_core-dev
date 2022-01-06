@@ -15,9 +15,12 @@
 
 # python
 import math
+from typing import Callable
+from typing import List
+from typing import Dict
 
 
-def float_eq(__x, __y):
+def float_eq(__x: float, __y: float) -> bool:
     """
         Function: float_eq
         Summary: returns if 2 float nums are equal
@@ -34,10 +37,13 @@ def float_eq(__x, __y):
     return abs(__x - __y) < 1e-5
 
 
-def greatest_common_divisor(x, y):
+def greatest_common_divisor(x: int, y: int) -> int:
     while y:
         x, y = y, x % y
     return x
+
+
+gcd: Callable = greatest_common_divisor
 
 
 def swap_int(x: int, y: int):

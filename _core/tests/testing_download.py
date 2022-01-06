@@ -1,6 +1,6 @@
 
 import unittest
-from core.download import *
+from _core.download import *
 
 class TestingDownload(unittest.TestCase):
 

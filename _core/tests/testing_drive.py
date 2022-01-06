@@ -1,7 +1,7 @@
 
 import unittest
-from core.drive import copy
-from core.aesthetics import *
+from _core.drive import copy
+from _core.aesthetics import *
 
 class TestingDrivepy(unittest.TestCase):
 
