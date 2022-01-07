@@ -25,9 +25,9 @@ import speech_recognition as sr # pip install SpeechRecognition
 from scipy.io.wavfile import write # pip install scipy
 
 # core package (pip install python-core)
-from core.system import *
-from core.path__ import *
-from core.aesthetics import *
+from _core.system import *
+from _core.path__ import *
+from _core.aesthetics import *
 
 
 def playaudio(path, __threaded=False):
@@ -242,7 +242,7 @@ def modify_volume(src, dst, units=15):
 
 
 import wave
-# import pyaudio
+import pyaudio
 import time
 
 def convert_file_to_wav(mp3_file: str, __print=False):

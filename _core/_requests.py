@@ -15,7 +15,7 @@ from playwright.sync_api import sync_playwright
 
 __DEBUG__ = False
 
-def url_validation(url: str) -> None:
+def is_valid_url(url: str) -> None:
     if not isinstance(url, str):
         raise TypeError(f"url: {url} is not type [str]")
 
@@ -40,7 +40,7 @@ def debug_print(message):
 
 
 def get_dynamic_soup(url: str, __debug=False) -> BeautifulSoup:
-    url_validation(url)
+    is_valid_url(url)
 
     global __DEBUG__
 
@@ -100,7 +100,7 @@ async def __get_dynamic_soup_async(url: str) -> BeautifulSoup:
 
 
 def get_dynamic_soup_async(url: str) -> BeautifulSoup:
-    url_validation(url)
+    is_valid_url(url)
     return asyncio.get_event_loop().run_until_complete(__get_dynamic_soup_async(url))
 
 

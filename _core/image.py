@@ -25,11 +25,11 @@ import numpy as np # pip install numpy
 from PIL import Image # pip install Pillow
 
 # core package (pip install python-core)
-from core.path__ import *
-from core.system import *
-from core.aesthetics import *
-import core.exceptions
-from core.download import download_file
+from _core.path__ import *
+from _core.system import *
+from _core.aesthetics import *
+import _core.exceptions
+from _core.download import download_file
 
 
 # you need to set up in your environment variables TESS = { path your tesseract.exe file }
@@ -39,7 +39,7 @@ if "TESS" not in os.environ.keys():
 pytesseract.pytesseract.tesseract_cmd = r"D:\Applications\tesseract_ocr\tesseract.exe"
 
 
-
+# we need at least python 3.8 or lower for numba
 from numba import jit, njit
 # @jit
 @jit(nopython=True)

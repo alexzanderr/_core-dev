@@ -31,6 +31,9 @@ tqdm = "*"
 ciphey = "*"
 pytesseract = "*"
 pyzbar = "*"
+playsound = "*"
+pyaudio = "*"
+sounddevice = "*"
 
 [dev-packages]
 pytest = "*"
