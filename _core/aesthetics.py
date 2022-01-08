@@ -933,6 +933,91 @@ from ._rich import error
 from ._rich import success
 from ._rich import warning
 
+# TERMINAL INDEPENDENT COLORS
+# colors that are using RGB algo
+
+import re
+
+def hex_to_rgb(hx, hsl=False):
+    """Converts a HEX code into RGB or HSL.
+    Args:
+        hx (str): Takes both short as well as long HEX codes.
+        hsl (bool): Converts the given HEX code into HSL value if True.
+    Return:
+        Tuple of length 3 consisting of either int or float values.
+    Raise:
+        ValueError: If given value is not a valid HEX code."""
+    if re.compile(r'#[a-fA-F0-9]{3}(?:[a-fA-F0-9]{3})?$').match(hx):
+        div = 255.0 if hsl else 0
+        if len(hx) <= 4:
+            return tuple(int(hx[i]*2, 16) / div if div else
+                         int(hx[i]*2, 16) for i in (1, 2, 3))
+        return tuple(int(hx[i:i+2], 16) / div if div else
+                     int(hx[i:i+2], 16) for i in (1, 3, 5))
+    raise ValueError(f'"{hx}" is not a valid HEX code.')
+
+class RGBColors:
+    # https://stackoverflow.com/a/70599663/12172291
+    class DefaultTheme:
+        # \u001b == \x1b (they are the same)
+        blue_ocean = "\x1b[38;2;38;199;186m"
+        yellow_dark = "\u001b[38;2;200;179;1m"
+        yellow_bright = "\u001b[38;2;230;186;52m"
+        lime_green = "\u001b[38;2;168;230;52m"
+        blue_dark = "\x1b[38;2;38;129;199m"
+        red = "\u001b[38;2;205;70;77m"
+        cyan = "\u001b[38;2;101;200;179m"
+        blue = "\u001b[38;2;70;142;205m"
+        purple = "\u001b[38;2;186;70;205m"
+        magenta = "\u001b[38;2;205;70;164m"
+        orange = "\u001b[38;2;230;114;52m"
+        green_pine = "\x1b[38;2;38;199;87m"
+        endc = "\u001b[0m"
+
+
+    # class AtomOneDarkTheme:
+    #     yellow = "\u001b[38;2;200;179;1m"
+    #     red = "\u001b[38;2;205;70;77m"
+    #     cyan = "\u001b[38;2;101;200;179m"
+    #     endc = "\u001b[0m"
+    #     blue = "\u001b[38;2;70;142;205m"
+
+    # class GruvboxTheme:
+    #     yellow = "\u001b[38;2;200;179;1m"
+    #     red = "\u001b[38;2;205;70;77m"
+    #     cyan = "\u001b[38;2;101;200;179m"
+    #     endc = "\u001b[0m"
+    #     blue = "\u001b[38;2;70;142;205m"
+
+    _themes = {
+        "default": DefaultTheme,
+        "onedark": "AtomOneDarkTheme",
+        "gruvbox": "GruvboxTheme"
+    }
+
+    def __init__(self, theme: str = "default"):
+        if theme not in self._themes:
+            raise NotImplementedError("theme is not themes list")
+
+        self.theme = self._themes[theme]
+
+
+    def red(self, _string: str) -> str:
+        return self.theme.red + _string + self.theme.endc
+
+
+    def print_red(self, _string: str):
+        print(self.red(_string))
+
+
+    def yellow_bright(self, _string: str) -> str:
+        return self.theme.yellow_bright + _string + self.theme.endc
+
+    def print_yellow_bright(self, _string: str):
+        print(self.yellow_bright(_string))
+
+
+
 
 # TESTING
 if __name__ == '__main__':

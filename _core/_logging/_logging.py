@@ -2,11 +2,14 @@
 import sys
 import os
 import logging
-from core.datetime__ import *
-from core.aesthetics import \
-    delete_ansi_codes
+# from _core._datetime import *
+from _core.aesthetics import *
 
-from core.drive import *
+colors = RGBColors()
+
+from _core.drive import *
+
+from typing import Literal
 
 sep_dimension = 30
 exception_message = f"[{yellow_bold('DONT PANIC')}][this is your of {lime_green_bold('CATCHED')} exception]\n"
@@ -21,9 +24,9 @@ def get_formatter(datetime_format="%d.%m.%Y-%H:%M:%S"):
     return formatter
 
 
-def get_stream_handler():
+def get_stream_handler(_level=logging.DEBUG):
     stream_handler = logging.StreamHandler()
-    stream_handler.setLevel(logging.INFO)
+    stream_handler.setLevel(_level)
     stream_handler.setFormatter(logging.Formatter(""))
 
     return stream_handler
@@ -55,19 +58,109 @@ def get_file_handler_with_datetime(folder=None, logfilename=None):
 
     return file_handler
 
+class TTYNotFoundError(Exception):
+    pass
 
-class Loggerr(logging.Logger):
+class CoreLogger(logging.Logger):
     """
         in order to achieve what you want to need to
         name the screen_logger and file_logger differently
     """
-    def __init__(self, name,
+
+    def __init__(self, name: str = "CoreLogger", _level=logging.INFO, tty=None, file=None) -> None:
+        super().__init__(name, level=_level)
+
+        self._asctime_format = colors.red("%(asctime)s.%(msecs)04d")
+        self._name_format = colors.yellow_bright("%(name)s")
+        self._levelname_format = colors.red("%(levelname)s")
+        self._message_format = colors.red("%(message)s")
+        self._lineno_format = colors.red("%(lineno)d")
+        self._module_format = colors.red("%(module)s")
+
+        stream_formatter = logging.Formatter(
+            f"[{self._asctime_format}] - [{self._levelname_format}] - [{self._name_format}] - [{self._message_format}] - {self._module_format}.py:{self._lineno_format}",
+            # datefmt is the format for 'asctime'
+            datefmt="%d.%m.%Y-%H:%M:%S")
+
+        stream_handler = logging.StreamHandler()
+        stream_handler.setLevel(self.level)
+        stream_handler.setFormatter(stream_formatter)
+
+        self.addHandler(stream_handler)
+
+        if tty:
+            if not os.path.exists(tty):
+                raise TTYNotFoundError(f"tty: {tty} not found on the disk")
+
+
+            tty_handler = logging.FileHandler(tty)
+            tty_handler.setLevel(self.level)
+            tty_handler.setFormatter(stream_formatter)
+
+            self.addHandler(tty_handler)
+
+        if file:
+            if isinstance(file, str):
+                self.file = Path(file)
+            elif isinstance(file, Path):
+                self.file = file
+            else:
+                raise TypeError("file must be type str or Path")
+
+            self.file.parent.mkdir(parents=True, exist_ok=True)
+            self.file_logger = logging.Logger("core-file-logger")
+
+            file_formatter = logging.Formatter(
+                f"[%(asctime)s.%(msecs)04d] - [%(name)s] - [%(levelname)s] - [%(message)s] - [%(module)s.py:%(lineno)d]",
+                # datefmt is the format for 'asctime'
+                datefmt="%d.%m.%Y-%H:%M:%S")
+
+            file_handler = logging.FileHandler(self.file.absolute().as_posix())
+            file_handler.setLevel(self.level)
+            file_handler.setFormatter(file_formatter)
+
+            self.file_logger.addHandler(file_handler)
+
+        # _formatter = logging.Formatter(
+        #     "%(asctime)s.%(msecs)04d - PID: %(process)d - %(name)s - %(levelname)s - %(message)s - line: %(lineno)d - module: %(module)s - pname: %(processName)s - thread id: %(thread)d - tname: %(threadName)s",
+        #     datefmt="[%d.%m.%Y]-[%H:%M:%S]")
+
+    def info(self, message: str) -> None:
+        super().info(message)
+        try:
+            # this may not exist
+            self.file_logger.info(message)
+        except AttributeError:
+            pass
+
+    def error(self, message: str) -> None:
+        super().error(message)
+        try:
+            # this may not exist
+            self.file_logger.error(message)
+        except AttributeError:
+            pass
+
+    def exception(self, message: str) -> None:
+        _con = Console(record=True)
+        _con.print_exception(show_locals=True, word_wrap=True)
+        super().error(message + "\n" + _con.export_text(styles=True, clear=False))
+        try:
+            # this may not exist
+            self.file_logger.error(message + "\n" + _con.export_text(styles=False, clear=False))
+        except AttributeError:
+            print("ia sa vedem")
+            pass
+
+
+    def __init2__(self, name,
         file_handler=None,
         stream_handler=None,
         foldername="logs",
         filename="log",
         clear_regularly=True # this will clear more than 10 logs in folder
     ):
+
         self.name = name
         self.folder_name = foldername
         self.clear_regularly = clear_regularly
@@ -107,14 +200,14 @@ class Loggerr(logging.Logger):
         self.clear()
 
 
-
-    def info(self, message, print__=True, *args, **kwargs):
+    def _info(self, message, print__=True, *args, **kwargs):
         self.file_logger.info(delete_ansi_codes(message))
         if print__:
             self.screen_logger.info(message.strip())
 
 
-    def exception(self, message, print__=True, *args, **kwargs):
+
+    def _exception(self, message, print__=True, *args, **kwargs):
         if print__:
             self.file_logger.info("")
             self.file_handler.setFormatter("")
@@ -159,8 +252,13 @@ class Loggerr(logging.Logger):
 
 
 if __name__ == '__main__':
-    # logger = Loggerr("andrew", foldername="logs", filename="andrew")
-    # logger.info(red_bold("testing"))
-    # logger.info(red_bold("testing some"))
-    # logger.info(red_bold("testing some functionality"))
-    pass
+    log = CoreLogger("core",
+        tty="/dev/pts/109",
+        file="logs/_logging.log"
+    )
+    log.info("m-am scos")
+    try:
+        raise ValueError("hello world from /dev/pts/109")
+    except ValueError:
+
+        log.exception("naisu")

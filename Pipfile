@@ -34,6 +34,7 @@ pyzbar = "*"
 playsound = "*"
 pyaudio = "*"
 sounddevice = "*"
+stackprinter = "*"
 
 [dev-packages]
 pytest = "*"
