@@ -3,14 +3,27 @@
 import subprocess
 from typing import Tuple
 
-def run_shell(command: str, __shell="/usr/bin/zsh"):
+def run_shell(command: str, __shell="/usr/bin/zsh", devnull=False):
     """
         this is going to run 'sh' on your linux system
         not bash, not zsh, just sh
     """
     if not __shell:
         __shell = "/usr/bin/zsh"
-    subprocess.call(command, shell=True, executable=__shell)
+    # https://stackoverflow.com/questions/11269575/how-to-hide-output-of-subprocess
+    if devnull:
+        return subprocess.call(
+            command,
+            shell=True,
+            executable=__shell,
+            stdout=subprocess.DEVNULL
+        )
+    return subprocess.call(
+        command,
+        shell=True,
+        executable=__shell,
+    )
+
 
 
 # this is now deprecated from subprocess.getoutput(cmd=...)

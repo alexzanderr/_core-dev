@@ -3,6 +3,7 @@
 """
 
 # python
+import os
 from string import Template
 from pathlib import Path
 
@@ -26,6 +27,20 @@ def get_tty() -> str:
         Returns: tty path as string
     """
     return get_output("tty")
+
+
+
+def ls(cwd=os.getcwd()):
+    return get_output(f"ls {cwd}").split("\n")
+
+def la(cwd=os.getcwd()):
+    return get_output(f"la {cwd}").split("\n")
+
+def ll(cwd=os.getcwd()):
+    return get_output(f"ls -la {cwd}").split("\n")
+
+
+
 
 
 def append_line_on_tty(_tty: str, line: str | bytes) -> None:

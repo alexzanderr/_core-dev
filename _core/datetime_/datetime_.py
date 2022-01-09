@@ -1,15 +1,14 @@
 
 """
-    core/__datetime.py
 
-    powerful time, date yeard datetime module
+    powerful time, date, and datetime module
     useful in development of programs that
     work with the concept of time
 
-    upgraded version of time.py yeard datetime.py
+    upgraded version of time.py and datetime.py
 
-    %Y  Year with century as a decimal number.
-    %m  Month as a decimal number [01,12].
+    %Y  - year: 2022
+    %m  - month: [01, 12]
     %d  Day of the month as a decimal number [01,31].
     %H  Hour(24-hour clock) as a decimal number [00,23].
     %M  Minute as a decimal number [00,59].
@@ -60,6 +59,7 @@ ython3.10/lib-dynload/_datetime.cpython-310-x86_64-linux-gnu.so)
 
 # python
 from time import time
+from time import sleep
 import calendar
 from datetime import datetime
 from datedelta import datedelta
@@ -155,6 +155,22 @@ def get_current_timedate(__format=__timedate_format):
     return datetime.now().strftime(__format)
 
 
+def get_current_timestamp():
+    return datetime.timestamp(datetime.now())
+
+
+def get_date_from_timestamp(_timestamp: float):
+    datetime.fromtimestamp(_timestamp).strftime(__date_format)
+
+
+def get_time_from_timestamp(_timestamp: float):
+    datetime.fromtimestamp(_timestamp).strftime(__time_format)
+
+
+def get_datetime_from_timestamp(_timestamp: float):
+    datetime.fromtimestamp(_timestamp).strftime(__datetime_format)
+
+
 def timestamp_to_date(seconds: int, __format=__date_format):
     return datetime.fromtimestamp(seconds).strftime(__format)
 
@@ -199,24 +215,12 @@ def GetOrthodoxPasteDate(year):
         return PasteOrthodox(year, month, day)
 
 
-TimeInterval = namedtuple("TimeIntervals", ["name", "seconds"])
-TimeIntervals = [
-    TimeInterval(name=_name, seconds=_value) for _name, _value in (
-        ("millennia", 60 * 60 * 24 * 365 * 1000),
-        ("century", 60 * 60 * 24 * 365 * 100),
-        ("decade", 60 * 60 * 24 * 365 * 10),
-        ("year", 60 * 60 * 24 * 365),
-        ("week", 60 * 60 * 24 * 7),
-        ("day", 60 * 60 * 24),
-        ("hour", 60 * 60),
-        ("minute", 60),
-        ("second", 1)
-    )
-]
 
-def seconds_to_time(seconds):
+
+
+def seconds_to_time(seconds: float | str | int):
     """
-        example of result:
+        >>> seconds_to_time(123761273612)
         Time(
             millennials=0,
             centuries=0,
@@ -230,25 +234,53 @@ def seconds_to_time(seconds):
         )
         you can select whatever you want from this named tuple
     """
-    if type(seconds) not in [str, int, float]:
-        raise TypeError(f"seconds: {type(seconds)}; not int or str")
+    if not isinstance(seconds, (str, int, float)):
+        raise TypeError(f"seconds: '{seconds}' must be string, integer or float")
 
     seconds = int(seconds)
-    intervals = ["millennials", "centuries", "decades", "years", "weeks", "", "hours", "minutes", "seconds"]
-    TimeDict = dict(zip(intervals, [0] * len(intervals)))
-    # {'millennials': 0, 'centuries': 0, 'decades': 0, 'years': 0, 'days': 0, 'hours': 0, 'minutes': 0, 'seconds': 0}
 
-    for (_, _seconds), k in zip(TimeIntervals, intervals):
-        result = seconds // _seconds
+    time_intervals_as_seconds = {
+        "millennia": 60 * 60 * 24 * 365 * 1000,
+        "century": 60 * 60 * 24 * 365 * 100,
+        "decade": 60 * 60 * 24 * 365 * 10,
+        "year": 60 * 60 * 24 * 365,
+        "week": 60 * 60 * 24 * 7,
+        "day": 60 * 60 * 24,
+        "hour": 60 * 60,
+        "minute": 60,
+        "second": 1
+    }
+
+    intervals = [
+        "millennials",
+        "centuries",
+        "decades",
+        "years",
+        "weeks",
+        "days",
+        "hours",
+        "minutes",
+        "seconds"
+    ]
+    time_intervals_values = {
+        "millennials": 0,
+        "centuries": 0,
+        "decades": 0,
+        "years": 0,
+        "weeks": 0,
+        "days": 0,
+        "hours": 0,
+        "minutes": 0,
+        "seconds": 0,
+    }
+
+
+    for _seconds, _interval in zip(time_intervals_as_seconds.values(), intervals):
+        result = seconds // _seconds # type: ignore
         seconds -= result * _seconds
-        TimeDict[k] = result
+        time_intervals_values[_interval] = result
 
-    for i, inter in enumerate(intervals):
-        if TimeDict[inter] != 0:
-            values = list(TimeDict.values())[i:]
-            return namedtuple("Time", intervals[i:])(*values)
-
-    return namedtuple("Time", "seconds")(seconds)
+    return namedtuple("Time", intervals)(*time_intervals_values.values())
 
 
 
@@ -268,12 +300,24 @@ def print_execution_time(__function, *params):
 
 
 
-class TimeObject(object):
+class Time(object):
     """ contains date and time attributes"""
-    def __init__(self, timestamp, date=get_current_date(), time=get_current_time()):
-        self.timestamp = timestamp
-        self.date = date
-        self.time = time
+    def __init__(self,
+        _timestamp=None,
+        _date=None,
+        _time=None,
+        _datetime=None):
+
+        if _timestamp:
+            if not isinstance(_timestamp, float):
+                raise TypeError()
+
+            self.timestamp = _timestamp
+            self.date = get_date_from_timestamp(self.timestamp)
+            self.time = get_time_from_timestamp(self.timestamp)
+            self.datetime = get_datetime_from_timestamp(self.timestamp)
+
+
 
 
 
@@ -282,42 +326,33 @@ def datetime_object_to_str(datetime_object, __format=__datetime_format):
 
 
 
-def VisualTimer(total_seconds=None, minutes=None, hours=None):
-    seconds = 0
-    if total_seconds:
-        seconds += total_seconds
+def VisualTimer(seconds=None, minutes=None, hours=None):
+    _seconds = 0
+    if seconds:
+        _seconds += seconds
     if minutes:
-        seconds += minutes * 60
+        _seconds += minutes * 60
     if hours:
-        seconds += hours * 3600
+        _seconds += hours * 3600
 
-    for _seconds in range(seconds, -1, -1):
+    for _seconds in range(_seconds, -1, -1):
         time_left = seconds_to_time(_seconds)
-        seconds = time_left.seconds
 
-        try:
-            minutes = time_left.minutes
-            if minutes < 10:
-                minutes = f"0{minutes}"
+        minutes = time_left.minutes
+        if minutes < 10:
+            minutes = f"0{minutes}"
 
-        except AttributeError:
-            minutes = "00"
+        hours = time_left.hours
+        if hours < 10:
+            hours = f"0{hours}"
 
-        try:
-            hours = time_left.hours
-            if hours < 10:
-                hours = f"0{hours}"
+        _seconds = time_left.seconds
+        if _seconds < 10:
+            _seconds = f"0{_seconds}"
 
-        except AttributeError:
-            hours = "00"
-
-
-        if seconds < 10:
-            seconds = f"0{seconds}"
-
-        time_left = aesthetics.yellow_bold(f"{hours}:{minutes}:{seconds}")
+        time_left = aesthetics.yellow_bold(f"{hours}:{minutes}:{_seconds}")
         print(f"Time Left: [  {time_left}  ]", end="\r")
-        time.sleep(1)
+        sleep(1)
 
 
 def days_difference(start_date, stop_date=get_current_date()) -> int:

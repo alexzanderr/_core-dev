@@ -22,7 +22,7 @@ from inspect import isfunction
 
 # _core package
 # pip install _core
-from _core.aesthetics import *
+from aesthetics import *
 
 
 SpinnerDotsType = TypeVar('SpinnerDotsType', bound='SpinnerDots')

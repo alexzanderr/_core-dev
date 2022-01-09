@@ -13,6 +13,9 @@ install(
     word_wrap=True
 )
 
+# if you want to run
+# ❱  python -m _core
+# you need to keep these like this
 from ._json import *
 from ._rich import *
 from ._collections import *
