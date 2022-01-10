@@ -44,9 +44,17 @@ def test_fixed_set_precision_str(
         print(result)
 
     except TypeError as error:
-        print(error)
+        yield
+        yield
+        yield
     except ValueError as error:
         print(error)
+        print("mario")
+        print(str(error)) # str on error gives you the message
+        yield
+        yield
+        yield
+
     else:
         _decimals = get_total_decimals(result)
 

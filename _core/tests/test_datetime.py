@@ -1,7 +1,7 @@
 
 import pytest
 
-from _core._datetime import is_valid_date_format
+from _core.datetime_ import is_valid_date_format
 @pytest.mark.parametrize("date_str, expected_result", [
     ("12.12.1202", True),
     ("12.12.3202", True),
@@ -18,7 +18,7 @@ def test_is_valid_date_format(
     assert is_valid_date_format(date_str) == expected_result
 
 
-from _core._datetime import is_valid_time_format
+from _core.datetime_ import is_valid_time_format
 @pytest.mark.parametrize("time_str, expected_result", [
     ("03:12:23", True),
     ("03:12:1013", False),
