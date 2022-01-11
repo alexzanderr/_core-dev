@@ -1,0 +1,794 @@
+[08.01.2022-20:05:13.0983] - [core-file-logger] - [INFO] - [m-am scos] - [_logging.py:132]
+[08.01.2022-20:05:14.0266] - [core-file-logger] - [ERROR] - [naisu
+] - [_logging.py:150]
+[08.01.2022-20:05:16.0060] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:05:16.0709] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:05:17.0179] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:05:17.0709] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:05:23.0487] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:05:23.0766] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:05:23.0992] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:06:49.0467] - [core-file-logger] - [INFO] - [asd] - [_logging.py:132]
+[08.01.2022-20:06:50.0891] - [core-file-logger] - [INFO] - [m-am scos] - [_logging.py:132]
+[08.01.2022-20:06:51.0178] - [core-file-logger] - [ERROR] - [naisu
+] - [_logging.py:150]
+[08.01.2022-20:07:42.0922] - [core-file-logger] - [INFO] - [m-am scos] - [_logging.py:132]
+[08.01.2022-20:07:43.0237] - [core-file-logger] - [ERROR] - [naisu
+╭───────────────────────── Traceback (most recent call last) ─────────────────────────╮
+│                                                                                     │
+│ /home/alexzander/Alexzander__/programming/dev/python3/_core/_core/_logging/_logging │
+│ .py:272 in <module>                                                                 │
+│                                                                                     │
+│   269 │                                                                             │
+│   270 │                                                                             │
+│   271 │   try:                                                                      │
+│ ❱ 272 │   │   raise ValueError("hello world from /dev/pts/109")                     │
+│   273 │   except ValueError:                                                        │
+│   274 │   │                                                                         │
+│   275 │   │   log.exception("naisu")                                                │
+│                                                                                     │
+│ ╭──────────────────────────────────── locals ─────────────────────────────────────╮ │
+│ │                  __annotations__ = {}                                           │ │
+│ │                     __builtins__ = <module 'builtins' (built-in)>               │ │
+│ │                       __cached__ = None                                         │ │
+│ │                          __doc__ = None                                         │ │
+│ │                         __file__ = '/home/alexzander/.local/share/virtualenvs/… │ │
+│ │                       __loader__ = <_frozen_importlib_external.SourceFileLoader │ │
+│ │                                    object at 0x7fc14824e1d0>                    │ │
+│ │                         __name__ = '__main__'                                   │ │
+│ │                      __package__ = None                                         │ │
+│ │                         __spec__ = None                                         │ │
+│ │                       ansi_codes = {                                            │ │
+│ │                                    │   'purple': '\x1b[95m',                    │ │
+│ │                                    │   'blue': '\x1b[94m',                      │ │
+│ │                                    │   'green': '\x1b[92m',                     │ │
+│ │                                    │   'yellow': '\x1b[93m',                    │ │
+│ │                                    │   'red': '\x1b[91m',                       │ │
+│ │                                    │   'endc': '\x1b[0m',                       │ │
+│ │                                    │   'bold': '\x1b[1m',                       │ │
+│ │                                    │   'underlined': '\x1b[4m',                 │ │
+│ │                                    │   'white': '\x1b[37;1m',                   │ │
+│ │                                    │   'cyan': '\x1b[38;5;44m',                 │ │
+│ │                                    │   ... +7                                   │ │
+│ │                                    }                                            │ │
+│ │                     ansi_colored = <function ansi_colored at 0x7fc1466ad7e0>    │ │
+│ │                      ansi_escape = re.compile('\\x1B(?:[@-Z\\\\-_]|\\[[0-?]*[   │ │
+│ │                                    -/]*[@-~])')                                 │ │
+│ │                        AnsiCodes = <class 'core.aesthetics.AnsiCodes'>          │ │
+│ │                  ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'                 │ │
+│ │                  ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'                 │ │
+│ │                          asciify = <function asciify at 0x7fc1466acca0>         │ │
+│ │                             blue = <function blue at 0x7fc1466af1c0>            │ │
+│ │                        blue_bold = <function blue_bold at 0x7fc1466af9a0>       │ │
+│ │             blue_bold_underlined = <function blue_bold_underlined at            │ │
+│ │                                    0x7fc1466afd90>                              │ │
+│ │                  blue_underlined = <function blue_underlined at 0x7fc1466af5b0> │ │
+│ │                             bold = <function bold at 0x7fc1466adab0>            │ │
+│ │                      bold_effect = '\x1b[1m'                                    │ │
+│ │                           branch = '│   '                                       │ │
+│ │                       chunk_size = 1000                                         │ │
+│ │                      clearscreen = <function clearscreen at 0x7fc1466c4820>     │ │
+│ │                            color = <function color at 0x7fc1466acee0>           │ │
+│ │                    color_manager = <core.aesthetics.ColorManager object at      │ │
+│ │                                    0x7fc14661b490>                              │ │
+│ │                   colorize_error = <function colorize_error at 0x7fc1466c4790>  │ │
+│ │                     ColorManager = <class 'core.aesthetics.ColorManager'>       │ │
+│ │                           colors = <_core.aesthetics.RGBColors object at        │ │
+│ │                                    0x7fc1466841c0>                              │ │
+│ │                          Console = <class 'rich.console.Console'>               │ │
+│ │                   ConsoleColored = <function ConsoleColored at 0x7fc1466adb40>  │ │
+│ │         ContainsNoSeparatorError = <class                                       │ │
+│ │                                    'core.path__.ContainsNoSeparatorError'>      │ │
+│ │            convert_size_in_bytes = <function convert_size_in_bytes at           │ │
+│ │                                    0x7fc1466c6440>                              │ │
+│ │                     copy_content = <function copy_content at 0x7fc1466c5c60>    │ │
+│ │                             core = <module 'core' from                          │ │
+│ │                                    '/home/alexzander/Alexzander__/programming/… │ │
+│ │                       CoreLogger = <class '__main__.CoreLogger'>                │ │
+│ │                  cpu_system_file = PosixPath('/proc/stat')                      │ │
+│ │                  create_shortcut = <function create_shortcut at 0x7fc1466c5cf0> │ │
+│ │                           ctypes = <module 'ctypes' from                        │ │
+│ │                                    '/usr/lib/python3.10/ctypes/__init__.py'>    │ │
+│ │                             cyan = <function cyan at 0x7fc1466af010>            │ │
+│ │                        cyan_bold = <function cyan_bold at 0x7fc1466af7f0>       │ │
+│ │             cyan_bold_underlined = <function cyan_bold_underlined at            │ │
+│ │                                    0x7fc1466afbe0>                              │ │
+│ │                  cyan_underlined = <function cyan_underlined at 0x7fc1466af400> │ │
+│ │                      dash_orange = '\x1b[91m\x1b[1m-\x1b[0m'                    │ │
+│ │                delete_ansi_codes = <function delete_ansi_codes at               │ │
+│ │                                    0x7fc1466adc60>                              │ │
+│ │                    delete_folder = <function delete_folder at 0x7fc1466c60e0>   │ │
+│ │           delete_folder_contents = <function delete_folder_contents at          │ │
+│ │                                    0x7fc1466c6170>                              │ │
+│ │                delete_last_slash = <function delete_last_slash at               │ │
+│ │                                    0x7fc1466c5630>                              │ │
+│ │         DifferentExtensionsError = <class                                       │ │
+│ │                                    'core.path__.DifferentExtensionsError'>      │ │
+│ │                    digital_units = [                                            │ │
+│ │                                    │   'KB',                                    │ │
+│ │                                    │   'MB',                                    │ │
+│ │                                    │   'GB',                                    │ │
+│ │                                    │   'TB',                                    │ │
+│ │                                    │   'PB',                                    │ │
+│ │                                    │   'EB',                                    │ │
+│ │                                    │   'ZB',                                    │ │
+│ │                                    │   'YB'                                     │ │
+│ │                                    ]                                            │ │
+│ │     down_right_connection_symbol = '┗═'                                         │ │
+│ │                      endc_effect = '\x1b[0m'                                    │ │
+│ │                     enter_symbol = '↵'                                          │ │
+│ │                     equal_symbol = '═'                                          │ │
+│ │                            error = <function                                    │ │
+│ │                                    rich_exception_decorator.<locals>._inner_de… │ │
+│ │                                    at 0x7fc1467d52d0>                           │ │
+│ │                exception_message = '[\x1b[93m\x1b[1mDONT PANIC\x1b[0m][this is  │ │
+│ │                                    your of \x1b[38;5;184m\x1b[1mCATCHED\x1b[0m  │ │
+│ │                                    exception]\n'+42                             │ │
+│ │              exception_separator = '[\x1b[38;5;184m\x1b[1m====================… │ │
+│ │                           exists = <function exists at 0x7fc1466c55a0>          │ │
+│ │                  extract_folders = <function extract_folders at 0x7fc1466c6200> │ │
+│ │                       fancy_line = '▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬'                    │ │
+│ │                      fancy_title = '▬▬▬▬▬▬▬▬▬ஜ۩۞  {title} ۞۩ஜ▬▬▬▬▬▬▬▬▬'         │ │
+│ │                             File = <class 'core.path__.File'>                   │ │
+│ │                            final = '└───'                                       │ │
+│ │               find_file_on_drive = <function find_file_on_drive at              │ │
+│ │                                    0x7fc1466c6290>                              │ │
+│ │        fixed_set_precision_float = <function fixed_set_precision_float at       │ │
+│ │                                    0x7fc1466c4dc0>                              │ │
+│ │          fixed_set_precision_str = <function fixed_set_precision_str at         │ │
+│ │                                    0x7fc1466c4d30>                              │ │
+│ │                           Folder = <class 'core.path__.Folder'>                 │ │
+│ │                 gather_relatives = <function gather_relatives at                │ │
+│ │                                    0x7fc1466c5bd0>                              │ │
+│ │                  get_arhitecture = <function get_arhitecture at 0x7fc1466c4940> │ │
+│ │             get_available_drives = <function get_available_drives at            │ │
+│ │                                    0x7fc1466c5e10>                              │ │
+│ │     get_available_drives_non_usb = <function get_available_drives_non_usb at    │ │
+│ │                                    0x7fc1466c5ea0>                              │ │
+│ │                get_computer_name = <function get_computer_name at               │ │
+│ │                                    0x7fc1466c4670>                              │ │
+│ │               get_CPU_percentage = <function get_CPU_percentage at              │ │
+│ │                                    0x7fc1466c4c10>                              │ │
+│ │              get_external_drives = <function get_external_drives at             │ │
+│ │                                    0x7fc1466c5f30>                              │ │
+│ │               get_file_extension = <function get_file_extension at              │ │
+│ │                                    0x7fc1466c5750>                              │ │
+│ │   get_file_handler_with_datetime = <function get_file_handler_with_datetime at  │ │
+│ │                                    0x7fc1466c6710>                              │ │
+│ │                    get_file_name = <function get_file_name at 0x7fc1466c56c0>   │ │
+│ │      get_filename_plus_extension = <function get_filename_plus_extension at     │ │
+│ │                                    0x7fc1466c57e0>                              │ │
+│ │                    get_formatter = <function get_formatter at 0x7fc146a7c0d0>   │ │
+│ │             get_operating_system = <function get_operating_system at            │ │
+│ │                                    0x7fc1466ac310>                              │ │
+│ │           get_path_from_absolute = <function get_path_from_absolute at          │ │
+│ │                                    0x7fc1466c5360>                              │ │
+│ │                     get_path_sep = <function get_path_sep at 0x7fc1466c4f70>    │ │
+│ │                    get_processor = <function get_processor at 0x7fc1466c4af0>   │ │
+│ │   get_project_path_on_filesystem = <function get_project_path_on_filesystem at  │ │
+│ │                                    0x7fc1466c5ab0>                              │ │
+│ │        get_python_implementation = <function get_python_implementation at       │ │
+│ │                                    0x7fc1466c4a60>                              │ │
+│ │      get_python_interpreter_path = <function get_python_interpreter_path at     │ │
+│ │                                    0x7fc1466c4b80>                              │ │
+│ │                  get_python_path = <function get_python_path at 0x7fc1466c45e0> │ │
+│ │               get_python_version = <function get_python_version at              │ │
+│ │                                    0x7fc1466c49d0>                              │ │
+│ │                get_size_in_bytes = <function get_size_in_bytes at               │ │
+│ │                                    0x7fc1466c63b0>                              │ │
+│ │                 get_size_on_disk = <function get_size_on_disk at                │ │
+│ │                                    0x7fc1466c64d0>                              │ │
+│ │               get_stream_handler = <function get_stream_handler at              │ │
+│ │                                    0x7fc1466c6680>                              │ │
+│ │               get_tesseract_path = <function get_tesseract_path at              │ │
+│ │                                    0x7fc1466c4700>                              │ │
+│ │               GetDriveLetterName = <function GetDriveLetterName at              │ │
+│ │                                    0x7fc14660e320>                              │ │
+│ │                            green = <function green at 0x7fc1466af0a0>           │ │
+│ │                       green_bold = <function green_bold at 0x7fc1466af880>      │ │
+│ │            green_bold_underlined = <function green_bold_underlined at           │ │
+│ │                                    0x7fc1466afc70>                              │ │
+│ │                 green_underlined = <function green_underlined at                │ │
+│ │                                    0x7fc1466af490>                              │ │
+│ │                             grey = <function grey at 0x7fc1466aedd0>            │ │
+│ │                       hex_to_int = <function hex_to_int at 0x7fc1466c4e50>      │ │
+│ │                       hex_to_rgb = <function hex_to_rgb at 0x7fc14660e290>      │ │
+│ │                  illegal_chars__ = ':*?"<>|'                                    │ │
+│ │                 IllegalPathError = <class 'core.path__.IllegalPathError'>       │ │
+│ │                 impressive_fonts = [                                            │ │
+│ │                                    │   'bell',                                  │ │
+│ │                                    │   'big',                                   │ │
+│ │                                    │   'broadway',                              │ │
+│ │                                    │   'bubble',                                │ │
+│ │                                    │   'chunky',                                │ │
+│ │                                    │   'contessa',                              │ │
+│ │                                    │   'cursive',                               │ │
+│ │                                    │   'cyberlarge',                            │ │
+│ │                                    │   'cybermedun',                            │ │
+│ │                                    │   'cybersmall',                            │ │
+│ │                                    │   ... +19                                  │ │
+│ │                                    ]                                            │ │
+│ │          IncorrectExtensionError = <class                                       │ │
+│ │                                    'core.path__.IncorrectExtensionError'>       │ │
+│ │            InvalidExtensionError = <class 'core.path__.InvalidExtensionError'>  │ │
+│ │                 InvalidFileError = <class 'core.path__.InvalidFileError'>       │ │
+│ │                 InvalidPathError = <class 'core.path__.InvalidPathError'>       │ │
+│ │                           is_abs = <function is_abs at 0x7fc1466c5510>          │ │
+│ │                          is_file = <function is_file at 0x7fc1466c53f0>         │ │
+│ │                    is_file_empty = <function is_file_empty at 0x7fc1466c65f0>   │ │
+│ │                   is_flash_drive = <function is_flash_drive at 0x7fc1466c5d80>  │ │
+│ │                        is_folder = <function is_folder at 0x7fc1466c5480>       │ │
+│ │                  is_folder_empty = <function is_folder_empty at 0x7fc1466c6560> │ │
+│ │                    is_valid_path = <function is_valid_path at 0x7fc1466c52d0>   │ │
+│ │                           italic = <function italic at 0x7fc1466aecb0>          │ │
+│ │                        itertools = <module 'itertools' (built-in)>              │ │
+│ │       latteral_connection_symbol = '═┳═'                                        │ │
+│ │          left_arrow_3_green_bold = '\x1b[92m\x1b[1m>>>\x1b[0m'                  │ │
+│ │                  left_arrow_blue = '\x1b[94m\x1b[1m<\x1b[0m'                    │ │
+│ │                left_arrow_yellow = '\x1b[93m\x1b[1m<\x1b[0m'                    │ │
+│ │                left_bracket_cyan = '\x1b[38;5;44m\x1b[1m[\x1b[0m'               │ │
+│ │                       lime_green = <function lime_green at 0x7fc1466aff40>      │ │
+│ │                  lime_green_bold = <function lime_green_bold at 0x7fc1466c40d0> │ │
+│ │       lime_green_bold_underlined = <function lime_green_bold_underlined at      │ │
+│ │                                    0x7fc1466c4160>                              │ │
+│ │            lime_green_underlined = <function lime_green_underlined at           │ │
+│ │                                    0x7fc1466c41f0>                              │ │
+│ │                            linux = True                                         │ │
+│ │                          Literal = typing.Literal                               │ │
+│ │                              log = <CoreLogger core (INFO)>                     │ │
+│ │                          logging = <module 'logging' from                       │ │
+│ │                                    '/usr/lib/python3.10/logging/__init__.py'>   │ │
+│ │                            macos = False                                        │ │
+│ │                  multiprocessing = <module 'multiprocessing' from               │ │
+│ │                                    '/usr/lib/python3.10/multiprocessing/__init… │ │
+│ │                    NotAFileError = <class 'core.path__.NotAFileError'>          │ │
+│ │                  NotAFolderError = <class 'core.path__.NotAFolderError'>        │ │
+│ │                        open_file = <function open_file at 0x7fc1466c6050>       │ │
+│ │                      open_folder = <function open_folder at 0x7fc1466c5fc0>     │ │
+│ │                 operating_system = 'linux'                                      │ │
+│ │                           orange = <function orange at 0x7fc1466aeef0>          │ │
+│ │                      orange_bold = <function orange_bold at 0x7fc1466af6d0>     │ │
+│ │           orange_bold_underlined = <function orange_bold_underlined at          │ │
+│ │                                    0x7fc1466afac0>                              │ │
+│ │                orange_underlined = <function orange_underlined at               │ │
+│ │                                    0x7fc1466af2e0>                              │ │
+│ │                               os = <module 'os' from                            │ │
+│ │                                    '/usr/lib/python3.10/os.py'>                 │ │
+│ │                             Path = <class 'pathlib.Path'>                       │ │
+│ │                     pauseprogram = <function pauseprogram at 0x7fc1466c48b0>    │ │
+│ │                         platform = <module 'platform' from                      │ │
+│ │                                    '/usr/lib/python3.10/platform.py'>           │ │
+│ │       print_all_ansi_backgrounds = <function print_all_ansi_backgrounds at      │ │
+│ │                                    0x7fc1466c44c0>                              │ │
+│ │       print_all_ansi_foregrounds = <function print_all_ansi_foregrounds at      │ │
+│ │                                    0x7fc1466c4430>                              │ │
+│ │                 print_ansi_table = <function print_ansi_table at                │ │
+│ │                                    0x7fc1466adbd0>                              │ │
+│ │                       print_blue = <function print_blue at 0x7fc1466add80>      │ │
+│ │                  print_blue_bold = <function print_blue_bold at 0x7fc1466ae560> │ │
+│ │       print_blue_bold_underlined = <function print_blue_bold_underlined at      │ │
+│ │                                    0x7fc1466ae950>                              │ │
+│ │            print_blue_underlined = <function print_blue_underlined at           │ │
+│ │                                    0x7fc1466ae170>                              │ │
+│ │                       print_cyan = <function print_cyan at 0x7fc1466adfc0>      │ │
+│ │                  print_cyan_bold = <function print_cyan_bold at 0x7fc1466ae7a0> │ │
+│ │       print_cyan_bold_underlined = <function print_cyan_bold_underlined at      │ │
+│ │                                    0x7fc1466aeb90>                              │ │
+│ │            print_cyan_underlined = <function print_cyan_underlined at           │ │
+│ │                                    0x7fc1466ae3b0>                              │ │
+│ │                      print_green = <function print_green at 0x7fc1466ae050>     │ │
+│ │                 print_green_bold = <function print_green_bold at                │ │
+│ │                                    0x7fc1466ae830>                              │ │
+│ │      print_green_bold_underlined = <function print_green_bold_underlined at     │ │
+│ │                                    0x7fc1466aec20>                              │ │
+│ │           print_green_underlined = <function print_green_underlined at          │ │
+│ │                                    0x7fc1466ae440>                              │ │
+│ │                     print_italic = <function print_italic at 0x7fc1466aed40>    │ │
+│ │                 print_lime_green = <function print_lime_green at                │ │
+│ │                                    0x7fc1466c4040>                              │ │
+│ │            print_lime_green_bold = <function print_lime_green_bold at           │ │
+│ │                                    0x7fc1466c4280>                              │ │
+│ │ print_lime_green_bold_underlined = <function print_lime_green_bold_underlined   │ │
+│ │                                    at 0x7fc1466c4310>                           │ │
+│ │      print_lime_green_underlined = <function print_lime_green_underlined at     │ │
+│ │                                    0x7fc1466c43a0>                              │ │
+│ │                     print_orange = <function print_orange at 0x7fc1466adea0>    │ │
+│ │                print_orange_bold = <function print_orange_bold at               │ │
+│ │                                    0x7fc1466ae680>                              │ │
+│ │     print_orange_bold_underlined = <function print_orange_bold_underlined at    │ │
+│ │                                    0x7fc1466aea70>                              │ │
+│ │          print_orange_underlined = <function print_orange_underlined at         │ │
+│ │                                    0x7fc1466ae290>                              │ │
+│ │                     print_purple = <function print_purple at 0x7fc1466adf30>    │ │
+│ │                print_purple_bold = <function print_purple_bold at               │ │
+│ │                                    0x7fc1466ae710>                              │ │
+│ │     print_purple_bold_underlined = <function print_purple_bold_underlined at    │ │
+│ │                                    0x7fc1466aeb00>                              │ │
+│ │          print_purple_underlined = <function print_purple_underlined at         │ │
+│ │                                    0x7fc1466ae320>                              │ │
+│ │                        print_red = <function print_red at 0x7fc1466adcf0>       │ │
+│ │                   print_red_bold = <function print_red_bold at 0x7fc1466ae4d0>  │ │
+│ │        print_red_bold_underlined = <function print_red_bold_underlined at       │ │
+│ │                                    0x7fc1466ae8c0>                              │ │
+│ │             print_red_underlined = <function print_red_underlined at            │ │
+│ │                                    0x7fc1466ae0e0>                              │ │
+│ │                     print_yellow = <function print_yellow at 0x7fc1466ade10>    │ │
+│ │                print_yellow_bold = <function print_yellow_bold at               │ │
+│ │                                    0x7fc1466ae5f0>                              │ │
+│ │     print_yellow_bold_underlined = <function print_yellow_bold_underlined at    │ │
+│ │                                    0x7fc1466ae9e0>                              │ │
+│ │          print_yellow_underlined = <function print_yellow_underlined at         │ │
+│ │                                    0x7fc1466ae200>                              │ │
+│ │                           purple = <function purple at 0x7fc1466aef80>          │ │
+│ │                      purple_bold = <function purple_bold at 0x7fc1466af760>     │ │
+│ │           purple_bold_underlined = <function purple_bold_underlined at          │ │
+│ │                                    0x7fc1466afb50>                              │ │
+│ │                purple_underlined = <function purple_underlined at               │ │
+│ │                                    0x7fc1466af370>                              │ │
+│ │                               re = <module 're' from                            │ │
+│ │                                    '/usr/lib/python3.10/re.py'>                 │ │
+│ │                              red = <function red at 0x7fc1466af130>             │ │
+│ │                   red_background = <function red_background at 0x7fc1466afe20>  │ │
+│ │                         red_bold = <function red_bold at 0x7fc1466af910>        │ │
+│ │              red_bold_underlined = <function red_bold_underlined at             │ │
+│ │                                    0x7fc1466afd00>                              │ │
+│ │                   red_underlined = <function red_underlined at 0x7fc1466af520>  │ │
+│ │                  reversed_effect = '\x1b[7m'                                    │ │
+│ │                        RGBColors = <class '_core.aesthetics.RGBColors'>         │ │
+│ │                      RichHandler = <class 'rich.logging.RichHandler'>           │ │
+│ │                 right_arrow_blue = '\x1b[94m\x1b[1m>\x1b[0m'                    │ │
+│ │               right_arrow_yellow = '\x1b[93m\x1b[1m>\x1b[0m'                    │ │
+│ │               right_bracket_cyan = '\x1b[38;5;44m\x1b[1m]\x1b[0m'               │ │
+│ │                              run = <function run at 0x7fc14736ab90>             │ │
+│ │                    sep_dimension = 30                                           │ │
+│ │                 shift_left_ascii = <function shift_left_ascii at                │ │
+│ │                                    0x7fc1466acdc0>                              │ │
+│ │                shift_right_ascii = <function shift_right_ascii at               │ │
+│ │                                    0x7fc1466ace50>                              │ │
+│ │                           shutil = <module 'shutil' from                        │ │
+│ │                                    '/usr/lib/python3.10/shutil.py'>             │ │
+│ │                            sleep = <built-in function sleep>                    │ │
+│ │                          space_4 = '    '                                       │ │
+│ │                           string = <module 'string' from                        │ │
+│ │                                    '/usr/lib/python3.10/string.py'>             │ │
+│ │                       subprocess = <module 'subprocess' from                    │ │
+│ │                                    '/usr/lib/python3.10/subprocess.py'>         │ │
+│ │                          success = <function                                    │ │
+│ │                                    rich_exception_decorator.<locals>._inner_de… │ │
+│ │                                    at 0x7fc1467d53f0>                           │ │
+│ │                              sys = <module 'sys' (built-in)>                    │ │
+│ │                              tee = '├───'                                       │ │
+│ │                         template = '\n[[[[[[[[[[[[[[[|]]]]]]]]]]]]]]]\n[::::::… │ │
+│ │                   text_insertion = <function text_insertion at 0x7fc1466c4550>  │ │
+│ │                       thicc_line = '▬'                                          │ │
+│ │                        threading = <module 'threading' from                     │ │
+│ │                                    '/usr/lib/python3.10/threading.py'>          │ │
+│ │               ThreadPoolExecutor = <class                                       │ │
+│ │                                    'concurrent.futures.thread.ThreadPoolExecut… │ │
+│ │                             time = <built-in function time>                     │ │
+│ │                        tree_repr = <function tree_repr at 0x7fc1466c5870>       │ │
+│ │              tree_representation = <function tree_representation at             │ │
+│ │                                    0x7fc1466c5a20>                              │ │
+│ │                triple_left_shift = '⋘'                                          │ │
+│ │               triple_right_shift = '⋙'                                          │ │
+│ │                 TTYNotFoundError = <class '__main__.TTYNotFoundError'>          │ │
+│ │                       underlined = <function underlined at 0x7fc1466ada20>      │ │
+│ │                underlined_effect = '\x1b[4m'                                    │ │
+│ │                          warning = <function                                    │ │
+│ │                                    rich_exception_decorator.<locals>._inner_de… │ │
+│ │                                    at 0x7fc1467d51b0>                           │ │
+│ │                     white_yellow = <function white_yellow at 0x7fc1466afeb0>    │ │
+│ │              win_drive_letters__ = [                                            │ │
+│ │                                    │   'a:',                                    │ │
+│ │                                    │   'b:',                                    │ │
+│ │                                    │   'c:',                                    │ │
+│ │                                    │   'd:',                                    │ │
+│ │                                    │   'e:',                                    │ │
+│ │                                    │   'f:',                                    │ │
+│ │                                    │   'g:',                                    │ │
+│ │                                    │   'h:',                                    │ │
+│ │                                    │   'i:',                                    │ │
+│ │                                    │   'j:',                                    │ │
+│ │                                    │   ... +16                                  │ │
+│ │                                    ]                                            │ │
+│ │                          windows = False                                        │ │
+│ │                           yellow = <function yellow at 0x7fc1466aee60>          │ │
+│ │                      yellow_bold = <function yellow_bold at 0x7fc1466af640>     │ │
+│ │           yellow_bold_underlined = <function yellow_bold_underlined at          │ │
+│ │                                    0x7fc1466afa30>                              │ │
+│ │                yellow_underlined = <function yellow_underlined at               │ │
+│ │                                    0x7fc1466af250>                              │ │
+│ ╰─────────────────────────────────────────────────────────────────────────────────╯ │
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+ValueError: hello world from /dev/pts/109
+] - [_logging.py:150]
+[08.01.2022-20:08:59.0237] - [core-file-logger] - [INFO] - [m-am scos] - [_logging.py:132]
+[08.01.2022-20:08:59.0519] - [core-file-logger] - [ERROR] - [naisu
+╭───────────────────────── Traceback (most recent call last) ─────────────────────────╮
+│                                                                                     │
+│ /home/alexzander/Alexzander__/programming/dev/python3/_core/_core/_logging/_logging │
+│ .py:272 in <module>                                                                 │
+│                                                                                     │
+│   269 │                                                                             │
+│   270 │                                                                             │
+│   271 │   try:                                                                      │
+│ ❱ 272 │   │   raise ValueError("hello world from /dev/pts/109")                     │
+│   273 │   except ValueError:                                                        │
+│   274 │   │                                                                         │
+│   275 │   │   log.exception("naisu")                                                │
+│                                                                                     │
+│ ╭──────────────────────────────────── locals ─────────────────────────────────────╮ │
+│ │                  __annotations__ = {}                                           │ │
+│ │                     __builtins__ = <module 'builtins' (built-in)>               │ │
+│ │                       __cached__ = None                                         │ │
+│ │                          __doc__ = None                                         │ │
+│ │                         __file__ = '/home/alexzander/.local/share/virtualenvs/… │ │
+│ │                       __loader__ = <_frozen_importlib_external.SourceFileLoader │ │
+│ │                                    object at 0x7fbc1ee821d0>                    │ │
+│ │                         __name__ = '__main__'                                   │ │
+│ │                      __package__ = None                                         │ │
+│ │                         __spec__ = None                                         │ │
+│ │                       ansi_codes = {                                            │ │
+│ │                                    │   'purple': '\x1b[95m',                    │ │
+│ │                                    │   'blue': '\x1b[94m',                      │ │
+│ │                                    │   'green': '\x1b[92m',                     │ │
+│ │                                    │   'yellow': '\x1b[93m',                    │ │
+│ │                                    │   'red': '\x1b[91m',                       │ │
+│ │                                    │   'endc': '\x1b[0m',                       │ │
+│ │                                    │   'bold': '\x1b[1m',                       │ │
+│ │                                    │   'underlined': '\x1b[4m',                 │ │
+│ │                                    │   'white': '\x1b[37;1m',                   │ │
+│ │                                    │   'cyan': '\x1b[38;5;44m',                 │ │
+│ │                                    │   ... +7                                   │ │
+│ │                                    }                                            │ │
+│ │                     ansi_colored = <function ansi_colored at 0x7fbc1d2dd7e0>    │ │
+│ │                      ansi_escape = re.compile('\\x1B(?:[@-Z\\\\-_]|\\[[0-?]*[   │ │
+│ │                                    -/]*[@-~])')                                 │ │
+│ │                        AnsiCodes = <class 'core.aesthetics.AnsiCodes'>          │ │
+│ │                  ascii_lowercase = 'abcdefghijklmnopqrstuvwxyz'                 │ │
+│ │                  ascii_uppercase = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'                 │ │
+│ │                          asciify = <function asciify at 0x7fbc1d2dcca0>         │ │
+│ │                             blue = <function blue at 0x7fbc1d2df1c0>            │ │
+│ │                        blue_bold = <function blue_bold at 0x7fbc1d2df9a0>       │ │
+│ │             blue_bold_underlined = <function blue_bold_underlined at            │ │
+│ │                                    0x7fbc1d2dfd90>                              │ │
+│ │                  blue_underlined = <function blue_underlined at 0x7fbc1d2df5b0> │ │
+│ │                             bold = <function bold at 0x7fbc1d2ddab0>            │ │
+│ │                      bold_effect = '\x1b[1m'                                    │ │
+│ │                           branch = '│   '                                       │ │
+│ │                       chunk_size = 1000                                         │ │
+│ │                      clearscreen = <function clearscreen at 0x7fbc1d2f4820>     │ │
+│ │                            color = <function color at 0x7fbc1d2dcee0>           │ │
+│ │                    color_manager = <core.aesthetics.ColorManager object at      │ │
+│ │                                    0x7fbc1d2b97b0>                              │ │
+│ │                   colorize_error = <function colorize_error at 0x7fbc1d2f4790>  │ │
+│ │                     ColorManager = <class 'core.aesthetics.ColorManager'>       │ │
+│ │                           colors = <_core.aesthetics.RGBColors object at        │ │
+│ │                                    0x7fbc1d25c1f0>                              │ │
+│ │                          Console = <class 'rich.console.Console'>               │ │
+│ │                   ConsoleColored = <function ConsoleColored at 0x7fbc1d2ddb40>  │ │
+│ │         ContainsNoSeparatorError = <class                                       │ │
+│ │                                    'core.path__.ContainsNoSeparatorError'>      │ │
+│ │            convert_size_in_bytes = <function convert_size_in_bytes at           │ │
+│ │                                    0x7fbc1d2f6440>                              │ │
+│ │                     copy_content = <function copy_content at 0x7fbc1d2f5c60>    │ │
+│ │                             core = <module 'core' from                          │ │
+│ │                                    '/home/alexzander/Alexzander__/programming/… │ │
+│ │                       CoreLogger = <class '__main__.CoreLogger'>                │ │
+│ │                  cpu_system_file = PosixPath('/proc/stat')                      │ │
+│ │                  create_shortcut = <function create_shortcut at 0x7fbc1d2f5cf0> │ │
+│ │                           ctypes = <module 'ctypes' from                        │ │
+│ │                                    '/usr/lib/python3.10/ctypes/__init__.py'>    │ │
+│ │                             cyan = <function cyan at 0x7fbc1d2df010>            │ │
+│ │                        cyan_bold = <function cyan_bold at 0x7fbc1d2df7f0>       │ │
+│ │             cyan_bold_underlined = <function cyan_bold_underlined at            │ │
+│ │                                    0x7fbc1d2dfbe0>                              │ │
+│ │                  cyan_underlined = <function cyan_underlined at 0x7fbc1d2df400> │ │
+│ │                      dash_orange = '\x1b[91m\x1b[1m-\x1b[0m'                    │ │
+│ │                delete_ansi_codes = <function delete_ansi_codes at               │ │
+│ │                                    0x7fbc1d2ddc60>                              │ │
+│ │                    delete_folder = <function delete_folder at 0x7fbc1d2f60e0>   │ │
+│ │           delete_folder_contents = <function delete_folder_contents at          │ │
+│ │                                    0x7fbc1d2f6170>                              │ │
+│ │                delete_last_slash = <function delete_last_slash at               │ │
+│ │                                    0x7fbc1d2f5630>                              │ │
+│ │         DifferentExtensionsError = <class                                       │ │
+│ │                                    'core.path__.DifferentExtensionsError'>      │ │
+│ │                    digital_units = [                                            │ │
+│ │                                    │   'KB',                                    │ │
+│ │                                    │   'MB',                                    │ │
+│ │                                    │   'GB',                                    │ │
+│ │                                    │   'TB',                                    │ │
+│ │                                    │   'PB',                                    │ │
+│ │                                    │   'EB',                                    │ │
+│ │                                    │   'ZB',                                    │ │
+│ │                                    │   'YB'                                     │ │
+│ │                                    ]                                            │ │
+│ │     down_right_connection_symbol = '┗═'                                         │ │
+│ │                      endc_effect = '\x1b[0m'                                    │ │
+│ │                     enter_symbol = '↵'                                          │ │
+│ │                     equal_symbol = '═'                                          │ │
+│ │                            error = <function                                    │ │
+│ │                                    rich_exception_decorator.<locals>._inner_de… │ │
+│ │                                    at 0x7fbc1d4092d0>                           │ │
+│ │                exception_message = '[\x1b[93m\x1b[1mDONT PANIC\x1b[0m][this is  │ │
+│ │                                    your of \x1b[38;5;184m\x1b[1mCATCHED\x1b[0m  │ │
+│ │                                    exception]\n'+42                             │ │
+│ │              exception_separator = '[\x1b[38;5;184m\x1b[1m====================… │ │
+│ │                           exists = <function exists at 0x7fbc1d2f55a0>          │ │
+│ │                  extract_folders = <function extract_folders at 0x7fbc1d2f6200> │ │
+│ │                       fancy_line = '▬▬▬▬▬▬▬▬▬ஜ۩۞۩ஜ▬▬▬▬▬▬▬▬▬'                    │ │
+│ │                      fancy_title = '▬▬▬▬▬▬▬▬▬ஜ۩۞  {title} ۞۩ஜ▬▬▬▬▬▬▬▬▬'         │ │
+│ │                             File = <class 'core.path__.File'>                   │ │
+│ │                            final = '└───'                                       │ │
+│ │               find_file_on_drive = <function find_file_on_drive at              │ │
+│ │                                    0x7fbc1d2f6290>                              │ │
+│ │        fixed_set_precision_float = <function fixed_set_precision_float at       │ │
+│ │                                    0x7fbc1d2f4dc0>                              │ │
+│ │          fixed_set_precision_str = <function fixed_set_precision_str at         │ │
+│ │                                    0x7fbc1d2f4d30>                              │ │
+│ │                           Folder = <class 'core.path__.Folder'>                 │ │
+│ │                 gather_relatives = <function gather_relatives at                │ │
+│ │                                    0x7fbc1d2f5bd0>                              │ │
+│ │                  get_arhitecture = <function get_arhitecture at 0x7fbc1d2f4940> │ │
+│ │             get_available_drives = <function get_available_drives at            │ │
+│ │                                    0x7fbc1d2f5e10>                              │ │
+│ │     get_available_drives_non_usb = <function get_available_drives_non_usb at    │ │
+│ │                                    0x7fbc1d2f5ea0>                              │ │
+│ │                get_computer_name = <function get_computer_name at               │ │
+│ │                                    0x7fbc1d2f4670>                              │ │
+│ │               get_CPU_percentage = <function get_CPU_percentage at              │ │
+│ │                                    0x7fbc1d2f4c10>                              │ │
+│ │              get_external_drives = <function get_external_drives at             │ │
+│ │                                    0x7fbc1d2f5f30>                              │ │
+│ │               get_file_extension = <function get_file_extension at              │ │
+│ │                                    0x7fbc1d2f5750>                              │ │
+│ │   get_file_handler_with_datetime = <function get_file_handler_with_datetime at  │ │
+│ │                                    0x7fbc1d2f6710>                              │ │
+│ │                    get_file_name = <function get_file_name at 0x7fbc1d2f56c0>   │ │
+│ │      get_filename_plus_extension = <function get_filename_plus_extension at     │ │
+│ │                                    0x7fbc1d2f57e0>                              │ │
+│ │                    get_formatter = <function get_formatter at 0x7fbc1d6b00d0>   │ │
+│ │             get_operating_system = <function get_operating_system at            │ │
+│ │                                    0x7fbc1d2dc310>                              │ │
+│ │           get_path_from_absolute = <function get_path_from_absolute at          │ │
+│ │                                    0x7fbc1d2f5360>                              │ │
+│ │                     get_path_sep = <function get_path_sep at 0x7fbc1d2f4f70>    │ │
+│ │                    get_processor = <function get_processor at 0x7fbc1d2f4af0>   │ │
+│ │   get_project_path_on_filesystem = <function get_project_path_on_filesystem at  │ │
+│ │                                    0x7fbc1d2f5ab0>                              │ │
+│ │        get_python_implementation = <function get_python_implementation at       │ │
+│ │                                    0x7fbc1d2f4a60>                              │ │
+│ │      get_python_interpreter_path = <function get_python_interpreter_path at     │ │
+│ │                                    0x7fbc1d2f4b80>                              │ │
+│ │                  get_python_path = <function get_python_path at 0x7fbc1d2f45e0> │ │
+│ │               get_python_version = <function get_python_version at              │ │
+│ │                                    0x7fbc1d2f49d0>                              │ │
+│ │                get_size_in_bytes = <function get_size_in_bytes at               │ │
+│ │                                    0x7fbc1d2f63b0>                              │ │
+│ │                 get_size_on_disk = <function get_size_on_disk at                │ │
+│ │                                    0x7fbc1d2f64d0>                              │ │
+│ │               get_stream_handler = <function get_stream_handler at              │ │
+│ │                                    0x7fbc1d2f6680>                              │ │
+│ │               get_tesseract_path = <function get_tesseract_path at              │ │
+│ │                                    0x7fbc1d2f4700>                              │ │
+│ │               GetDriveLetterName = <function GetDriveLetterName at              │ │
+│ │                                    0x7fbc1d242320>                              │ │
+│ │                            green = <function green at 0x7fbc1d2df0a0>           │ │
+│ │                       green_bold = <function green_bold at 0x7fbc1d2df880>      │ │
+│ │            green_bold_underlined = <function green_bold_underlined at           │ │
+│ │                                    0x7fbc1d2dfc70>                              │ │
+│ │                 green_underlined = <function green_underlined at                │ │
+│ │                                    0x7fbc1d2df490>                              │ │
+│ │                             grey = <function grey at 0x7fbc1d2dedd0>            │ │
+│ │                       hex_to_int = <function hex_to_int at 0x7fbc1d2f4e50>      │ │
+│ │                       hex_to_rgb = <function hex_to_rgb at 0x7fbc1d242290>      │ │
+│ │                  illegal_chars__ = ':*?"<>|'                                    │ │
+│ │                 IllegalPathError = <class 'core.path__.IllegalPathError'>       │ │
+│ │                 impressive_fonts = [                                            │ │
+│ │                                    │   'bell',                                  │ │
+│ │                                    │   'big',                                   │ │
+│ │                                    │   'broadway',                              │ │
+│ │                                    │   'bubble',                                │ │
+│ │                                    │   'chunky',                                │ │
+│ │                                    │   'contessa',                              │ │
+│ │                                    │   'cursive',                               │ │
+│ │                                    │   'cyberlarge',                            │ │
+│ │                                    │   'cybermedun',                            │ │
+│ │                                    │   'cybersmall',                            │ │
+│ │                                    │   ... +19                                  │ │
+│ │                                    ]                                            │ │
+│ │          IncorrectExtensionError = <class                                       │ │
+│ │                                    'core.path__.IncorrectExtensionError'>       │ │
+│ │            InvalidExtensionError = <class 'core.path__.InvalidExtensionError'>  │ │
+│ │                 InvalidFileError = <class 'core.path__.InvalidFileError'>       │ │
+│ │                 InvalidPathError = <class 'core.path__.InvalidPathError'>       │ │
+│ │                           is_abs = <function is_abs at 0x7fbc1d2f5510>          │ │
+│ │                          is_file = <function is_file at 0x7fbc1d2f53f0>         │ │
+│ │                    is_file_empty = <function is_file_empty at 0x7fbc1d2f65f0>   │ │
+│ │                   is_flash_drive = <function is_flash_drive at 0x7fbc1d2f5d80>  │ │
+│ │                        is_folder = <function is_folder at 0x7fbc1d2f5480>       │ │
+│ │                  is_folder_empty = <function is_folder_empty at 0x7fbc1d2f6560> │ │
+│ │                    is_valid_path = <function is_valid_path at 0x7fbc1d2f52d0>   │ │
+│ │                           italic = <function italic at 0x7fbc1d2decb0>          │ │
+│ │                        itertools = <module 'itertools' (built-in)>              │ │
+│ │       latteral_connection_symbol = '═┳═'                                        │ │
+│ │          left_arrow_3_green_bold = '\x1b[92m\x1b[1m>>>\x1b[0m'                  │ │
+│ │                  left_arrow_blue = '\x1b[94m\x1b[1m<\x1b[0m'                    │ │
+│ │                left_arrow_yellow = '\x1b[93m\x1b[1m<\x1b[0m'                    │ │
+│ │                left_bracket_cyan = '\x1b[38;5;44m\x1b[1m[\x1b[0m'               │ │
+│ │                       lime_green = <function lime_green at 0x7fbc1d2dff40>      │ │
+│ │                  lime_green_bold = <function lime_green_bold at 0x7fbc1d2f40d0> │ │
+│ │       lime_green_bold_underlined = <function lime_green_bold_underlined at      │ │
+│ │                                    0x7fbc1d2f4160>                              │ │
+│ │            lime_green_underlined = <function lime_green_underlined at           │ │
+│ │                                    0x7fbc1d2f41f0>                              │ │
+│ │                            linux = True                                         │ │
+│ │                          Literal = typing.Literal                               │ │
+│ │                              log = <CoreLogger core (INFO)>                     │ │
+│ │                          logging = <module 'logging' from                       │ │
+│ │                                    '/usr/lib/python3.10/logging/__init__.py'>   │ │
+│ │                            macos = False                                        │ │
+│ │                  multiprocessing = <module 'multiprocessing' from               │ │
+│ │                                    '/usr/lib/python3.10/multiprocessing/__init… │ │
+│ │                    NotAFileError = <class 'core.path__.NotAFileError'>          │ │
+│ │                  NotAFolderError = <class 'core.path__.NotAFolderError'>        │ │
+│ │                        open_file = <function open_file at 0x7fbc1d2f6050>       │ │
+│ │                      open_folder = <function open_folder at 0x7fbc1d2f5fc0>     │ │
+│ │                 operating_system = 'linux'                                      │ │
+│ │                           orange = <function orange at 0x7fbc1d2deef0>          │ │
+│ │                      orange_bold = <function orange_bold at 0x7fbc1d2df6d0>     │ │
+│ │           orange_bold_underlined = <function orange_bold_underlined at          │ │
+│ │                                    0x7fbc1d2dfac0>                              │ │
+│ │                orange_underlined = <function orange_underlined at               │ │
+│ │                                    0x7fbc1d2df2e0>                              │ │
+│ │                               os = <module 'os' from                            │ │
+│ │                                    '/usr/lib/python3.10/os.py'>                 │ │
+│ │                             Path = <class 'pathlib.Path'>                       │ │
+│ │                     pauseprogram = <function pauseprogram at 0x7fbc1d2f48b0>    │ │
+│ │                         platform = <module 'platform' from                      │ │
+│ │                                    '/usr/lib/python3.10/platform.py'>           │ │
+│ │       print_all_ansi_backgrounds = <function print_all_ansi_backgrounds at      │ │
+│ │                                    0x7fbc1d2f44c0>                              │ │
+│ │       print_all_ansi_foregrounds = <function print_all_ansi_foregrounds at      │ │
+│ │                                    0x7fbc1d2f4430>                              │ │
+│ │                 print_ansi_table = <function print_ansi_table at                │ │
+│ │                                    0x7fbc1d2ddbd0>                              │ │
+│ │                       print_blue = <function print_blue at 0x7fbc1d2ddd80>      │ │
+│ │                  print_blue_bold = <function print_blue_bold at 0x7fbc1d2de560> │ │
+│ │       print_blue_bold_underlined = <function print_blue_bold_underlined at      │ │
+│ │                                    0x7fbc1d2de950>                              │ │
+│ │            print_blue_underlined = <function print_blue_underlined at           │ │
+│ │                                    0x7fbc1d2de170>                              │ │
+│ │                       print_cyan = <function print_cyan at 0x7fbc1d2ddfc0>      │ │
+│ │                  print_cyan_bold = <function print_cyan_bold at 0x7fbc1d2de7a0> │ │
+│ │       print_cyan_bold_underlined = <function print_cyan_bold_underlined at      │ │
+│ │                                    0x7fbc1d2deb90>                              │ │
+│ │            print_cyan_underlined = <function print_cyan_underlined at           │ │
+│ │                                    0x7fbc1d2de3b0>                              │ │
+│ │                      print_green = <function print_green at 0x7fbc1d2de050>     │ │
+│ │                 print_green_bold = <function print_green_bold at                │ │
+│ │                                    0x7fbc1d2de830>                              │ │
+│ │      print_green_bold_underlined = <function print_green_bold_underlined at     │ │
+│ │                                    0x7fbc1d2dec20>                              │ │
+│ │           print_green_underlined = <function print_green_underlined at          │ │
+│ │                                    0x7fbc1d2de440>                              │ │
+│ │                     print_italic = <function print_italic at 0x7fbc1d2ded40>    │ │
+│ │                 print_lime_green = <function print_lime_green at                │ │
+│ │                                    0x7fbc1d2f4040>                              │ │
+│ │            print_lime_green_bold = <function print_lime_green_bold at           │ │
+│ │                                    0x7fbc1d2f4280>                              │ │
+│ │ print_lime_green_bold_underlined = <function print_lime_green_bold_underlined   │ │
+│ │                                    at 0x7fbc1d2f4310>                           │ │
+│ │      print_lime_green_underlined = <function print_lime_green_underlined at     │ │
+│ │                                    0x7fbc1d2f43a0>                              │ │
+│ │                     print_orange = <function print_orange at 0x7fbc1d2ddea0>    │ │
+│ │                print_orange_bold = <function print_orange_bold at               │ │
+│ │                                    0x7fbc1d2de680>                              │ │
+│ │     print_orange_bold_underlined = <function print_orange_bold_underlined at    │ │
+│ │                                    0x7fbc1d2dea70>                              │ │
+│ │          print_orange_underlined = <function print_orange_underlined at         │ │
+│ │                                    0x7fbc1d2de290>                              │ │
+│ │                     print_purple = <function print_purple at 0x7fbc1d2ddf30>    │ │
+│ │                print_purple_bold = <function print_purple_bold at               │ │
+│ │                                    0x7fbc1d2de710>                              │ │
+│ │     print_purple_bold_underlined = <function print_purple_bold_underlined at    │ │
+│ │                                    0x7fbc1d2deb00>                              │ │
+│ │          print_purple_underlined = <function print_purple_underlined at         │ │
+│ │                                    0x7fbc1d2de320>                              │ │
+│ │                        print_red = <function print_red at 0x7fbc1d2ddcf0>       │ │
+│ │                   print_red_bold = <function print_red_bold at 0x7fbc1d2de4d0>  │ │
+│ │        print_red_bold_underlined = <function print_red_bold_underlined at       │ │
+│ │                                    0x7fbc1d2de8c0>                              │ │
+│ │             print_red_underlined = <function print_red_underlined at            │ │
+│ │                                    0x7fbc1d2de0e0>                              │ │
+│ │                     print_yellow = <function print_yellow at 0x7fbc1d2dde10>    │ │
+│ │                print_yellow_bold = <function print_yellow_bold at               │ │
+│ │                                    0x7fbc1d2de5f0>                              │ │
+│ │     print_yellow_bold_underlined = <function print_yellow_bold_underlined at    │ │
+│ │                                    0x7fbc1d2de9e0>                              │ │
+│ │          print_yellow_underlined = <function print_yellow_underlined at         │ │
+│ │                                    0x7fbc1d2de200>                              │ │
+│ │                           purple = <function purple at 0x7fbc1d2def80>          │ │
+│ │                      purple_bold = <function purple_bold at 0x7fbc1d2df760>     │ │
+│ │           purple_bold_underlined = <function purple_bold_underlined at          │ │
+│ │                                    0x7fbc1d2dfb50>                              │ │
+│ │                purple_underlined = <function purple_underlined at               │ │
+│ │                                    0x7fbc1d2df370>                              │ │
+│ │                               re = <module 're' from                            │ │
+│ │                                    '/usr/lib/python3.10/re.py'>                 │ │
+│ │                              red = <function red at 0x7fbc1d2df130>             │ │
+│ │                   red_background = <function red_background at 0x7fbc1d2dfe20>  │ │
+│ │                         red_bold = <function red_bold at 0x7fbc1d2df910>        │ │
+│ │              red_bold_underlined = <function red_bold_underlined at             │ │
+│ │                                    0x7fbc1d2dfd00>                              │ │
+│ │                   red_underlined = <function red_underlined at 0x7fbc1d2df520>  │ │
+│ │                  reversed_effect = '\x1b[7m'                                    │ │
+│ │                        RGBColors = <class '_core.aesthetics.RGBColors'>         │ │
+│ │                      RichHandler = <class 'rich.logging.RichHandler'>           │ │
+│ │                 right_arrow_blue = '\x1b[94m\x1b[1m>\x1b[0m'                    │ │
+│ │               right_arrow_yellow = '\x1b[93m\x1b[1m>\x1b[0m'                    │ │
+│ │               right_bracket_cyan = '\x1b[38;5;44m\x1b[1m]\x1b[0m'               │ │
+│ │                              run = <function run at 0x7fbc1df9eb90>             │ │
+│ │                    sep_dimension = 30                                           │ │
+│ │                 shift_left_ascii = <function shift_left_ascii at                │ │
+│ │                                    0x7fbc1d2dcdc0>                              │ │
+│ │                shift_right_ascii = <function shift_right_ascii at               │ │
+│ │                                    0x7fbc1d2dce50>                              │ │
+│ │                           shutil = <module 'shutil' from                        │ │
+│ │                                    '/usr/lib/python3.10/shutil.py'>             │ │
+│ │                            sleep = <built-in function sleep>                    │ │
+│ │                          space_4 = '    '                                       │ │
+│ │                           string = <module 'string' from                        │ │
+│ │                                    '/usr/lib/python3.10/string.py'>             │ │
+│ │                       subprocess = <module 'subprocess' from                    │ │
+│ │                                    '/usr/lib/python3.10/subprocess.py'>         │ │
+│ │                          success = <function                                    │ │
+│ │                                    rich_exception_decorator.<locals>._inner_de… │ │
+│ │                                    at 0x7fbc1d4093f0>                           │ │
+│ │                              sys = <module 'sys' (built-in)>                    │ │
+│ │                              tee = '├───'                                       │ │
+│ │                         template = '\n[[[[[[[[[[[[[[[|]]]]]]]]]]]]]]]\n[::::::… │ │
+│ │                   text_insertion = <function text_insertion at 0x7fbc1d2f4550>  │ │
+│ │                       thicc_line = '▬'                                          │ │
+│ │                        threading = <module 'threading' from                     │ │
+│ │                                    '/usr/lib/python3.10/threading.py'>          │ │
+│ │               ThreadPoolExecutor = <class                                       │ │
+│ │                                    'concurrent.futures.thread.ThreadPoolExecut… │ │
+│ │                             time = <built-in function time>                     │ │
+│ │                        tree_repr = <function tree_repr at 0x7fbc1d2f5870>       │ │
+│ │              tree_representation = <function tree_representation at             │ │
+│ │                                    0x7fbc1d2f5a20>                              │ │
+│ │                triple_left_shift = '⋘'                                          │ │
+│ │               triple_right_shift = '⋙'                                          │ │
+│ │                 TTYNotFoundError = <class '__main__.TTYNotFoundError'>          │ │
+│ │                       underlined = <function underlined at 0x7fbc1d2dda20>      │ │
+│ │                underlined_effect = '\x1b[4m'                                    │ │
+│ │                          warning = <function                                    │ │
+│ │                                    rich_exception_decorator.<locals>._inner_de… │ │
+│ │                                    at 0x7fbc1d4091b0>                           │ │
+│ │                     white_yellow = <function white_yellow at 0x7fbc1d2dfeb0>    │ │
+│ │              win_drive_letters__ = [                                            │ │
+│ │                                    │   'a:',                                    │ │
+│ │                                    │   'b:',                                    │ │
+│ │                                    │   'c:',                                    │ │
+│ │                                    │   'd:',                                    │ │
+│ │                                    │   'e:',                                    │ │
+│ │                                    │   'f:',                                    │ │
+│ │                                    │   'g:',                                    │ │
+│ │                                    │   'h:',                                    │ │
+│ │                                    │   'i:',                                    │ │
+│ │                                    │   'j:',                                    │ │
+│ │                                    │   ... +16                                  │ │
+│ │                                    ]                                            │ │
+│ │                          windows = False                                        │ │
+│ │                           yellow = <function yellow at 0x7fbc1d2dee60>          │ │
+│ │                      yellow_bold = <function yellow_bold at 0x7fbc1d2df640>     │ │
+│ │           yellow_bold_underlined = <function yellow_bold_underlined at          │ │
+│ │                                    0x7fbc1d2dfa30>                              │ │
+│ │                yellow_underlined = <function yellow_underlined at               │ │
+│ │                                    0x7fbc1d2df250>                              │ │
+│ ╰─────────────────────────────────────────────────────────────────────────────────╯ │
+╰─────────────────────────────────────────────────────────────────────────────────────╯
+ValueError: hello world from /dev/pts/109
+] - [_logging.py:150]
