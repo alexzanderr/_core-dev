@@ -8,3 +8,4 @@ nginx.conf
 nginx/static
 migrations
 .mypy_cache
+logs
