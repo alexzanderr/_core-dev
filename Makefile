@@ -8,8 +8,9 @@
 
 
 test:
-	# durations is to print all durations for every called func
-	pytest -vv -x -rP --color=yes --durations=0
+# 	durations is to print all durations for every called func
+# 	pytest -vv -x -rP --color=yes --durations=0
+	pytest -vv -x -rP --color=yes
 	
 tests:
 	# durations is to print all durations for every called func

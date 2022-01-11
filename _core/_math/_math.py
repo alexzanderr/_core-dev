@@ -24,7 +24,7 @@ def fixed_set_precision_str(
             f"@[yellow]real_number[/]: '[red]{real_number}[/]'" \
             " must be [green]integer[/], [green]float[/], or [green]string[/]"
         _con.print(__message)
-        raise TypeError(__message)
+        raise TypeError(f"real_number: '{real_number}' must be integer, float or string")
 
     if isinstance(real_number, str):
         try:
@@ -69,17 +69,28 @@ def fixed_set_precision_float(
     return float(fixed_set_precision_str(real_number, precision))
 
 
-def hex_to_int(hex_string: str | int):
-    if isinstance(hex_string, int):
-        return int(str(hex_string), 16)
+def hex_to_int(_hex: str | int):
+    if isinstance(_hex, int):
+        return int(str(_hex), 16)
 
-    elif isinstance(hex_string, str):
-        return int(hex_string, 16)
+    elif isinstance(_hex, str):
+        return int(_hex, 16)
 
     else:
-        __message = f"@hex_string: '{hex_string}' should be type string or integer"
+        __message = f"@hex_string: '{_hex}' should be type string or integer"
         _con.print(__message)
         raise TypeError(__message)
 
 
 
+
+def get_total_decimals(real_number: float | str):
+
+    if not isinstance(real_number, (float, str)):
+        raise TypeError(f"@real_number: '{real_number}' must be type float or string")
+
+    if isinstance(real_number, float):
+        real_number = str(real_number)
+
+    _int, _real = real_number.split(".")
+    return len(_real)

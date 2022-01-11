@@ -2,13 +2,13 @@
 
 import pytest
 
-from _core._random import random_digits
-from _core._random import random_number
-from _core._random import random_str
-from _core._random import random_lower_str
-from _core._random import random_upper_str
-from _core._random import random_date_str
-from _core._random import random_date_struct
+from _core.random_ import random_digits
+from _core.random_ import random_number
+from _core.random_ import random_str
+from _core.random_ import random_lower_str
+from _core.random_ import random_upper_str
+from _core.random_ import random_date_str
+from _core.random_ import random_date_struct
 
 
 @pytest.mark.parametrize("_size, expected_len", [
