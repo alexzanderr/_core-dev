@@ -14,8 +14,8 @@ import platform
 from pathlib import Path
 
 # core package ( pip installpython-core )
-import _core.exceptions
-import _core.aesthetics
+from _core.exceptions import *
+from _core.aesthetics import *
 
 
 def get_operating_system():
@@ -36,13 +36,8 @@ def get_computer_name():
 def get_tesseract_path():
     """ return executable of tesseract engine (if installed) """
     if "TESS" not in os.environ.keys():
-        raise core.exceptions.NotFoundError("TESS is not environment variables")
+        raise NotFoundError("TESS is not environment variables")
     return os.environ["TESS"]
-
-
-def colorize_error():
-    import colored_traceback  # pip install colored_traceback
-    colored_traceback.add_hook(always=True)
 
 
 def clearscreen():
@@ -55,7 +50,7 @@ def clearscreen():
 
 
 def pauseprogram(
-        message=f"[ press {core.aesthetics.green_bold('<enter>')} to continue... ]\n"):
+        message=f"[ press {green_bold('<enter>')} to continue... ]\n"):
     input(message)
 
 
@@ -78,6 +73,7 @@ def get_processor():
 def get_python_interpreter_path():
     return sys.executable
 
+from _core._math import fixed_set_precision_float
 
 cpu_system_file = Path("/proc/stat")
 def get_CPU_percentage():

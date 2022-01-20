@@ -972,6 +972,7 @@ class RGBColors:
         magenta = "\u001b[38;2;205;70;164m"
         orange = "\u001b[38;2;230;114;52m"
         green_pine = "\x1b[38;2;38;199;87m"
+        gray = "\u001b[38;2;108;108;108m"
         endc = "\u001b[0m"
 
 

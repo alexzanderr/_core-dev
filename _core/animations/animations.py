@@ -18,9 +18,9 @@ from time import sleep
 from random import choice
 
 # core package ( pip install python-core )
-from core.numbers__ import *
-from core.aesthetics import *
-from core.system import clearscreen
+from _core._math import *
+from _core.aesthetics import *
+from _core.system import clearscreen
 
 # 3rd party
 from colorama import Fore, Style
@@ -29,6 +29,7 @@ from colorama import Fore, Style
 def progress_bar(
     iteration,
     length,
+    title="Progress",
     decimals=2,
     progressbar_length=40,
     fill_symbol="█",
@@ -46,22 +47,23 @@ def progress_bar(
     completed = fill_symbol * filled_length + "_" * (progressbar_length - filled_length)
 
     if iteration == length:
-        progressbar = f"[Progress]: |{completed}| [{progress_percent}] [Completed]"
+        progressbar = f"[{title}]: |{completed}| [{progress_percent}] [Completed]"
         progressbar = ConsoleColored(progressbar, "green")
     else:
-        progressbar = f"[Progress]: |{completed}| [{progress_percent}] [Complete]"
+        progressbar = f"[{title}]: |{completed}| [{progress_percent}] [Complete]"
         progressbar = ConsoleColored(progressbar, color)
 
     return progressbar
 
 
 def load_progress_bar(
+    title="",
     length=100,
     sleep_duration=0.045,
     color="yellow"
 ):
     for i in range(length + 1):
-        p = progress_bar(i, length, color=color)
+        p = progress_bar(i, length, color=color, title=title)
         print(p, end="\r")
         sleep(sleep_duration)
     print()
@@ -138,4 +140,5 @@ def xmas_tree(
 
 # TESTING
 if __name__ == '__main__':
-    xmas_tree("xmas_tree", __iterations=5)
+    # xmas_tree("xmas_tree", __iterations=5)
+    load_progress_bar()

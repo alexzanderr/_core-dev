@@ -4,10 +4,10 @@
 import os
 
 # core package ( pip install python-core )
-from core.drive import *
-from core._json import *
-from core.path__ import *
-from core.audio import modify_volume
+from _core.drive import *
+from _core._json import *
+from _core.path__ import *
+from _core.audio import modify_volume
 
 
 def UpdateSounds(original_remote_folder: str,

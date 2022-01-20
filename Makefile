@@ -29,3 +29,9 @@ clean:
 
 mypy:
 	mypy --install-types .
+
+
+cov:
+	coverage run -m pytest -vv -x -rP --color=yes
+	coverage html
+	firefox htmlcov/index.html &

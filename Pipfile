@@ -35,6 +35,11 @@ playsound = "*"
 pyaudio = "*"
 sounddevice = "*"
 stackprinter = "*"
+python3-nmap = "*"
+python-nmap = "*"
+ffmpeg-python = "*"
+pyyaml = "*"
+matplotlib = "*"
 
 [dev-packages]
 pytest = "*"
