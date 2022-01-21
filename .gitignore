@@ -9,3 +9,5 @@ nginx/static
 migrations
 .mypy_cache
 logs
+.coverage
+htmlcov
