@@ -11,3 +11,4 @@ migrations
 logs
 .coverage
 htmlcov
+dist
