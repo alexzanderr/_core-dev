@@ -1,8 +1,27 @@
 [tool.poetry]
-name = "_core"
-version = "0.1.0"
+name = "core_dev"
+version = "0.1.5"
 description = ""
 authors = ["alexzanderr <alexxander18360@gmail.com>"]
+packages = [
+	{ include = "core" },
+]
+include = [
+	"coverage/coverage.svg",
+	"coverage/badge.svg",
+	"coverage/docs.svg",
+]
+license = "MIT"
+readme = "README.md"
+classifiers = [
+    "Environment :: Console",
+    "Framework :: Flake8",
+    "Operating System :: OS Independent",
+    "Topic :: Software Development :: Documentation",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+    "Topic :: Software Development :: Quality Assurance",
+]
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
