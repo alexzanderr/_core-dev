@@ -1,8 +1,8 @@
 
 
 import os
-from _core.shell import get_output
-from _core.shell import run_shell
+from core.shell import get_output
+from core.shell import run_shell
 
 from string import Template
 

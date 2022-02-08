@@ -1,4 +1,4 @@
-![logo](https://github.com/alexzanderr/_core-dev/blob/main/_core-logo-dev-readme.png?raw=True)
+![logo](https://github.com/alexzanderr/_core-dev/blob/main/static/img/_core-logo-dev-readme.png?raw=True)
 
 <p align="center">
     <a href="https://choosealicense.com/licenses/mit/" alt="License: MIT">

@@ -18,9 +18,9 @@ from time import sleep
 from random import choice
 
 # core package ( pip install python-core )
-from _core._math import *
-from _core.aesthetics import *
-from _core.system import clearscreen
+from core._math import *
+from core.aesthetics import *
+from core.system import clearscreen
 
 # 3rd party
 from colorama import Fore, Style

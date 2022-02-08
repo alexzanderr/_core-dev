@@ -25,11 +25,11 @@ import numpy as np # pip install numpy
 from PIL import Image # pip install Pillow
 
 # core package (pip install python-core)
-from _core.path__ import *
-from _core.system import *
-from _core.aesthetics import *
+from core.path__ import *
+from core.system import *
+from core.aesthetics import *
 import _core.exceptions
-from _core.download import download_file
+from core.download import download_file
 
 
 # you need to set up in your environment variables TESS = { path your tesseract.exe file }

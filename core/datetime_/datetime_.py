@@ -67,9 +67,9 @@ from collections import namedtuple
 
 
 # core package ( pip install python-core )
-from _core._math import fixed_set_precision_float
-from _core._math import fixed_set_precision_str
-from _core import aesthetics
+from core._math import fixed_set_precision_float
+from core._math import fixed_set_precision_str
+from core import aesthetics
 
 
 __date_format = "%d.%m.%Y"

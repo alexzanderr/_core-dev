@@ -43,3 +43,7 @@ cov:
 
 	# open coverage results in browser
 	firefox htmlcov/index.html &
+
+
+pub:
+	

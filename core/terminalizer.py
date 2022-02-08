@@ -17,8 +17,8 @@ from PIL import ImageFont
 from PIL import ImageColor
 from time import sleep
 
-from _core._yaml import load_yaml_from_file
-from _core.aesthetics import delete_ansi_codes
+from core._yaml import load_yaml_from_file
+from core.aesthetics import delete_ansi_codes
 
 
 # sys.stdout.write("s")
@@ -118,8 +118,8 @@ def clean(string: str):
 
     return string
 
-from _core._string import find_all
-from _core._string import find_total
+from core._string import find_all
+from core._string import find_total
 
 operations = []
 

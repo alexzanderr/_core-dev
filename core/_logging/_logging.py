@@ -2,12 +2,12 @@
 import sys
 import os
 import logging
-# from _core._datetime import *
-from _core.aesthetics import *
+# from core._datetime import *
+from core.aesthetics import *
 
 colors = RGBColors()
 
-from _core.drive import *
+from core.drive import *
 
 from typing import Literal
 

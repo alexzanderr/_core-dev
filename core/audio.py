@@ -25,9 +25,9 @@ import speech_recognition as sr # pip install SpeechRecognition
 from scipy.io.wavfile import write # pip install scipy
 
 # core package (pip install python-core)
-from _core.system import *
-from _core.path__ import *
-from _core.aesthetics import *
+from core.system import *
+from core.path__ import *
+from core.aesthetics import *
 
 
 def playaudio(path, __threaded=False):

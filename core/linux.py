@@ -8,8 +8,8 @@ from string import Template
 from pathlib import Path
 
 # _core package
-from _core.shell import run_shell
-from _core.shell import get_output
+from core.shell import run_shell
+from core.shell import get_output
 
 
 

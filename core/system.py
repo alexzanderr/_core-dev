@@ -14,8 +14,8 @@ import platform
 from pathlib import Path
 
 # core package ( pip installpython-core )
-from _core.exceptions import *
-from _core.aesthetics import *
+from core.exceptions import *
+from core.aesthetics import *
 
 
 def get_operating_system():
@@ -73,7 +73,7 @@ def get_processor():
 def get_python_interpreter_path():
     return sys.executable
 
-from _core._math import fixed_set_precision_float
+from core._math import fixed_set_precision_float
 
 cpu_system_file = Path("/proc/stat")
 def get_CPU_percentage():

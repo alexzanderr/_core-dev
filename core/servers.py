@@ -4,7 +4,7 @@ import re
 import socket
 from collections import namedtuple
 from nmap import PortScanner
-from _core.shell import run_shell
+from core.shell import run_shell
 
 
 
