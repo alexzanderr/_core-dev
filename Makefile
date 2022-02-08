@@ -37,8 +37,10 @@ cov:
 	# create html report
 	coverage html
 	# create badge for readme
-	coverage-badge -f -o coverage/badge.svg
+	coverage-badge -f -o static/img/coverage/coverage.svg
+
 	# create docs badge for readme
+# 	docstr-coverage core --badge static/img/coverage/docs.svg
 # 	docstr-coverage --accept-empty # make sure exits with code 0 to not ruin my make; this will always give exit code 1
 
 	# open coverage results in browser
@@ -46,4 +48,4 @@ cov:
 
 
 pub:
-	
+	poetry publish --build

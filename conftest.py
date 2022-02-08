@@ -11,7 +11,7 @@ def just_give_me_the_client():
     return 1
 
 
-# TODO add ✅ to terminal when tests are complete
+# TODO add ✅ with green to the terminal when tests are complete
 def pytest_unconfigure(config):
     # inspiration from
     # https://stackoverflow.com/questions/56271207/how-to-access-the-overall-runtime-in-pytest

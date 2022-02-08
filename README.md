@@ -1,14 +1,14 @@
-![logo](https://github.com/alexzanderr/_core-dev/blob/main/static/img/_core-logo-dev-readme.png?raw=True)
+![logo](https://github.com/alexzanderr/_core-dev/blob/main/static/img/logo/_core-logo-dev-readme.png?raw=True)
 
 <p align="center">
     <a href="https://choosealicense.com/licenses/mit/" alt="License: MIT">
         <img src="https://img.shields.io/badge/license-MIT-green.svg" />
     </a>
     <a href="https://choosealicense.com/licenses/mit/" alt="License: MIT">
-        <img src="https://github.com/alexzanderr/_core-dev/blob/main/coverage/coverage.svg?raw=True">
+        <img src="https://github.com/alexzanderr/_core-dev/blob/main/static/img/coverage/coverage.svg?raw=True">
     </a>
     <a href="https://choosealicense.com/licenses/mit/" alt="License: MIT">
-        <img src="https://github.com/alexzanderr/_core-dev/blob/main/coverage/docs.svg?raw=True">
+        <img src="https://github.com/alexzanderr/_core-dev/blob/main/static/img/coverage/docs.svg?raw=True">
     </a>
 </p>
 
