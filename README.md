@@ -40,7 +40,7 @@ best of the best - meaning: you got all python utilities ever in one package
 
 
 # TODO
-check [`TODO.md`](./TODO.md)
+check [`TODO.md`](https://github.com/alexzanderr/_core-dev/blob/main/TODO.md)
 
 
 ### why there is a test_core outside the package

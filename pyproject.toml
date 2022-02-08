@@ -1,16 +1,18 @@
 [tool.poetry]
 name = "core_dev"
-version = "0.1.5"
+version = "0.1.6"
 description = ""
 authors = ["alexzanderr <alexxander18360@gmail.com>"]
 packages = [
 	{ include = "core" },
 ]
-include = [
-	"coverage/coverage.svg",
-	"coverage/badge.svg",
-	"coverage/docs.svg",
-]
+# not working
+# ------------------------------
+# include = [
+# 	"coverage/coverage.svg",
+# 	"coverage/badge.svg",
+# 	"coverage/docs.svg",
+# ]
 license = "MIT"
 readme = "README.md"
 classifiers = [
