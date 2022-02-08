@@ -21,6 +21,8 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: Quality Assurance",
 ]
+homepage = "https://github.com/alexzanderr/_core-dev"
+repository = "https://github.com/alexzanderr/_core-dev"
 
 
 [tool.poetry.dependencies]

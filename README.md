@@ -1,14 +1,14 @@
-![docstr-coverage](./_core-logo-dev-readme.png)
+![logo](https://github.com/alexzanderr/_core-dev/blob/main/_core-logo-dev-readme.png?raw=True)
 
 <p align="center">
     <a href="https://choosealicense.com/licenses/mit/" alt="License: MIT">
         <img src="https://img.shields.io/badge/license-MIT-green.svg" />
     </a>
     <a href="https://choosealicense.com/licenses/mit/" alt="License: MIT">
-        <img src="./coverage/coverage.svg">
+        <img src="https://github.com/alexzanderr/_core-dev/blob/main/coverage/coverage.svg?raw=True">
     </a>
     <a href="https://choosealicense.com/licenses/mit/" alt="License: MIT">
-        <img src="./coverage/docs.svg">
+        <img src="https://github.com/alexzanderr/_core-dev/blob/main/coverage/docs.svg?raw=True">
     </a>
 </p>
 
