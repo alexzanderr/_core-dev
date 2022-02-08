@@ -29,3 +29,17 @@ clean:
 
 mypy:
 	mypy --install-types .
+
+
+cov:
+	# run
+	coverage run -m pytest -vv -x -rP --color=yes
+	# create html report
+	coverage html
+	# create badge for readme
+	coverage-badge -f -o coverage/badge.svg
+	# create docs badge for readme
+# 	docstr-coverage --accept-empty # make sure exits with code 0 to not ruin my make; this will always give exit code 1
+
+	# open coverage results in browser
+	firefox htmlcov/index.html &

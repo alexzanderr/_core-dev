@@ -35,6 +35,12 @@ playsound = "*"
 pyaudio = "*"
 sounddevice = "*"
 stackprinter = "*"
+python3-nmap = "*"
+python-nmap = "*"
+ffmpeg-python = "*"
+pyyaml = "*"
+matplotlib = "*"
+sudo = "*"
 
 [dev-packages]
 pytest = "*"
@@ -42,6 +48,9 @@ pytest-xdist = "*"
 pytest-cases = "*"
 ptpython = "*"
 pytest-steps = "*"
+coverage = "*"
+docstr-coverage = "*"
+coverage-badge = "*"
 
 [requires]
 python_version = "3.10"
