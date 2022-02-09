@@ -74,21 +74,16 @@ def get_dynamic_soup(url: str, __debug=False) -> BeautifulSoup:
         return soup
 
 
+from playwright.sync_api import sync_playwright
 
-# def get_dynamic_soup(url: str) -> BeautifulSoup:
-
-#     with sync_playwright() as p:
-#         browser = p.chromium.launch()
-
-#         page = browser.new_page()
-
-#         page.goto(url)
-
-#         soup = BeautifulSoup(page.content(), "html.parser")
-
-#         browser.close()
-
-#         return soup
+def get_dynamic_soup(url: str) -> BeautifulSoup:
+    with sync_playwright() as p:
+        browser = p.chromium.launch()
+        page = browser.new_page()
+        page.goto(url)
+        soup = BeautifulSoup(page.content(), "html.parser")
+        browser.close()
+        return soup
 
 
 
