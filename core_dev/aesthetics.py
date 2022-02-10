@@ -1007,6 +1007,14 @@ class RGBColors:
         return self.theme.red + _string + self.theme.endc
 
 
+    def blue_dark(self, _string: str) -> str:
+        return self.theme.blue_dark + _string + self.theme.endc
+
+
+    def cyan(self, _string: str) -> str:
+        return self.theme.cyan + _string + self.theme.endc
+
+
     def print_red(self, _string: str):
         print(self.red(_string))
 
